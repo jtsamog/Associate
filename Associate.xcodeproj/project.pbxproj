@@ -16,6 +16,17 @@
 		FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */; };
 		FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */; };
 		FFEEFD741F3CF834002E0C9A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD731F3CF834002E0C9A /* APIKeys.swift */; };
+		FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */; };
+		FFEEFD961F3E1DE1002E0C9A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD951F3E1DE1002E0C9A /* EventTableViewController.swift */; };
+		FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */; };
+		FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD991F3E1E13002E0C9A /* ConnectionsTableViewController.swift */; };
+		FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */; };
+		FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */; };
+		FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA31F3E1EF4002E0C9A /* NewEventTableViewCell.swift */; };
+		FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA51F3E1F00002E0C9A /* EventTableViewCell.swift */; };
+		FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */; };
+		FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */; };
+		FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +43,17 @@
 		FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FFEEFD731F3CF834002E0C9A /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKeys.swift; path = ../APIKeys.swift; sourceTree = "<group>"; };
+		FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		FFEEFD951F3E1DE1002E0C9A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewController.swift; sourceTree = "<group>"; };
+		FFEEFD991F3E1E13002E0C9A /* ConnectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsTableViewController.swift; sourceTree = "<group>"; };
+		FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FFEEFDA31F3E1EF4002E0C9A /* NewEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewEventTableViewCell.swift; path = Associate/NewEventTableViewCell.swift; sourceTree = "<group>"; };
+		FFEEFDA51F3E1F00002E0C9A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
+		FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +121,9 @@
 		FFEEFD6B1F3CF004002E0C9A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */,
-				FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */,
+				FFEEFDA01F3E1E68002E0C9A /* VC */,
+				FFEEFD9F1F3E1E5D002E0C9A /* TVC */,
+				FFEEFDA21F3E1E96002E0C9A /* Cell */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +150,41 @@
 				FF887C451F3B6E6E0095F5C9 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		FFEEFD9F1F3E1E5D002E0C9A /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				FFEEFD951F3E1DE1002E0C9A /* EventTableViewController.swift */,
+				FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */,
+				FFEEFD991F3E1E13002E0C9A /* ConnectionsTableViewController.swift */,
+			);
+			name = TVC;
+			sourceTree = "<group>";
+		};
+		FFEEFDA01F3E1E68002E0C9A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */,
+				FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */,
+				FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */,
+				FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */,
+				FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		FFEEFDA21F3E1E96002E0C9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFEEFDA31F3E1EF4002E0C9A /* NewEventTableViewCell.swift */,
+				FFEEFDA51F3E1F00002E0C9A /* EventTableViewCell.swift */,
+				FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */,
+				FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */,
+				FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */,
+			);
+			name = Cell;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +312,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */,
+				FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */,
 				FFEEFD741F3CF834002E0C9A /* APIKeys.swift in Sources */,
 				FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */,
+				FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */,
+				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
+				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
+				FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */,
+				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
+				FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */,
+				FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */,
+				FFEEFD961F3E1DE1002E0C9A /* EventTableViewController.swift in Sources */,
 				FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */,
+				FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
