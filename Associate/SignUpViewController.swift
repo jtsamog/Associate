@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
                 
                 return
             }
-            //pop over to login vc
+//            pop over to login vc
         }
         
     }
