@@ -164,7 +164,7 @@
 				TargetAttributes = {
 					FF887C381F3B6E6E0095F5C9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 76WZ7VC9P2;
+						DevelopmentTeam = 4KJC5XPKL6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -383,7 +383,7 @@
 			baseConfigurationReference = 4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 76WZ7VC9P2;
+				DEVELOPMENT_TEAM = 4KJC5XPKL6;
 				INFOPLIST_FILE = Associate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Wymer.Associate";
@@ -397,7 +397,7 @@
 			baseConfigurationReference = A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 76WZ7VC9P2;
+				DEVELOPMENT_TEAM = 4KJC5XPKL6;
 				INFOPLIST_FILE = Associate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Wymer.Associate";
