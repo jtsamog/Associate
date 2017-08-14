@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
+		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
+		30C3C37C1F4206DC008FAE9A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C37B1F4206DC008FAE9A /* APIKeys.swift */; };
 		66A58F524420A987399878D0 /* Pods_Associate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */; };
 		FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */; };
 		FF887C421F3B6E6E0095F5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C401F3B6E6E0095F5C9 /* Main.storyboard */; };
@@ -15,7 +18,6 @@
 		FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */; };
 		FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */; };
 		FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */; };
-		FFEEFD741F3CF834002E0C9A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD731F3CF834002E0C9A /* APIKeys.swift */; };
 		FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */; };
 		FFEEFD961F3E1DE1002E0C9A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD951F3E1DE1002E0C9A /* EventTableViewController.swift */; };
 		FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */; };
@@ -30,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		30C3C3771F42049E008FAE9A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		30C3C37B1F4206DC008FAE9A /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.debug.xcconfig"; sourceTree = "<group>"; };
 		A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.release.xcconfig"; sourceTree = "<group>"; };
 		B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Associate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +47,6 @@
 		FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FFEEFD731F3CF834002E0C9A /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKeys.swift; path = ../APIKeys.swift; sourceTree = "<group>"; };
 		FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		FFEEFD951F3E1DE1002E0C9A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewController.swift; sourceTree = "<group>"; };
@@ -106,8 +110,8 @@
 		FF887C3B1F3B6E6E0095F5C9 /* Associate */ = {
 			isa = PBXGroup;
 			children = (
-				FFEEFD731F3CF834002E0C9A /* APIKeys.swift */,
 				FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */,
+				30C3C37B1F4206DC008FAE9A /* APIKeys.swift */,
 				FFEEFD6B1F3CF004002E0C9A /* Controllers */,
 				FFEEFD6C1F3CF018002E0C9A /* Model */,
 				FFEEFD6D1F3CF02D002E0C9A /* Views */,
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */,
+				30C3C3771F42049E008FAE9A /* Event.swift */,
+				30C3C3711F4202DB008FAE9A /* R.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,7 +319,6 @@
 			files = (
 				FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */,
 				FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */,
-				FFEEFD741F3CF834002E0C9A /* APIKeys.swift in Sources */,
 				FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */,
 				FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */,
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
@@ -321,8 +326,11 @@
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
 				FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */,
 				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
 				FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */,
+				30C3C37C1F4206DC008FAE9A /* APIKeys.swift in Sources */,
+				30C3C3721F4202DB008FAE9A /* R.swift in Sources */,
 				FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */,
 				FFEEFD961F3E1DE1002E0C9A /* EventTableViewController.swift in Sources */,
 				FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */,
