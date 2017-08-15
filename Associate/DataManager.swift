@@ -11,6 +11,8 @@ import Parse
 
 class DataManager  {
     
+    //This is a comment to test stuff
+    
   
     //MARK: Login
     static func login(with userName: String, and password: String, completion:@escaping (Bool, Error?)-> Void) {
