@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
 		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
-		30C3C37E1F427726008FAE9A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C37D1F427726008FAE9A /* APIKeys.swift */; };
 		66A58F524420A987399878D0 /* Pods_Associate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */; };
 		FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3879041F421C57002685B8 /* NewEventViewController.swift */; };
 		FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */; };
 		FF887C421F3B6E6E0095F5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C401F3B6E6E0095F5C9 /* Main.storyboard */; };
 		FF887C441F3B6E6E0095F5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */; };
 		FF887C471F3B6E6E0095F5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C451F3B6E6E0095F5C9 /* LaunchScreen.storyboard */; };
+		FFB139221F434CF000CA13ED /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB139211F434CF000CA13ED /* APIKeys.swift */; };
 		FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */; };
 		FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */; };
 		FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */; };
@@ -35,9 +35,7 @@
 /* Begin PBXFileReference section */
 		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		30C3C3771F42049E008FAE9A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		30C3C37D1F427726008FAE9A /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.debug.xcconfig"; sourceTree = "<group>"; };
-		884A91BD1F4278B8008DDC36 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.release.xcconfig"; sourceTree = "<group>"; };
 		B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Associate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3879041F421C57002685B8 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +45,7 @@
 		FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF887C461F3B6E6E0095F5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF887C481F3B6E6E0095F5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB139211F434CF000CA13ED /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKeys.swift; path = ../APIKeys.swift; sourceTree = "<group>"; };
 		FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -139,7 +138,7 @@
 				FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */,
 				30C3C3771F42049E008FAE9A /* Event.swift */,
 				30C3C3711F4202DB008FAE9A /* R.swift */,
-				30C3C37D1F427726008FAE9A /* APIKeys.swift */,
+				FFB139211F434CF000CA13ED /* APIKeys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D9EEF9F27A290E3773A9322A /* [CP] Embed Pods Frameworks */ = {
@@ -335,10 +334,10 @@
 				FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */,
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
-				30C3C37E1F427726008FAE9A /* APIKeys.swift in Sources */,
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
 				FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */,
 				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+				FFB139221F434CF000CA13ED /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
