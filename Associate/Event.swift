@@ -13,23 +13,37 @@ import Parse
 final class Event: PFObject {
 
   // MARK: - Properties
-  @NSManaged var title: String?
-  @NSManaged var eventDescription: String?
-  @NSManaged var address: String?
-  @NSManaged var addressGeoLoc: PFGeoPoint
-  @NSManaged var image: PFFile
-  @NSManaged var user : PFUser
+    @NSManaged var title: String?
+    @NSManaged var eventDescription: String?
+    @NSManaged var address: String?
+    @NSManaged var addressGeoLoc: PFGeoPoint
+    @NSManaged var image: PFFile
+    @NSManaged var user : PFUser
+    var photo: UIImage?
   
   // MARK: - Initializers
-  init(title: String?, eventDescription: String?, address: String?, addressGeoLoc: PFGeoPoint, image: PFFile, user: PFUser) {
-    super.init()
-    self.title = title
-    self.eventDescription = eventDescription
-    self.address = address
-    self.addressGeoLoc = addressGeoLoc
-    self.image = image
-    self.user = user
-  }
+    init(title: String?, image: PFFile, user: PFUser, descrip: String?) {
+        super.init()
+        
+        self.title = title
+        self.eventDescription = descrip
+        self.image = image
+        self.user = user
+    }
+    
+    
+    
+    
+    
+//  init(title: String?, eventDescription: String?, address: String?, addressGeoLoc: PFGeoPoint, image: PFFile, user: PFUser) {
+//    super.init()
+//    self.title = title
+//    self.eventDescription = eventDescription
+//    self.address = address
+//    self.addressGeoLoc = addressGeoLoc
+//    self.image = image
+//    self.user = user
+//  }
   
   override init() {
     super.init()
@@ -37,7 +51,7 @@ final class Event: PFObject {
   
   //MARK: - Overriden
   override class func query() -> PFQuery<PFObject>? {
-    let query = PFQuery(className: R.eventPost)
+    let query = PFQuery(className: Event.parseClassName())
     query.includeKey("user")
     query.order(byDescending: "createdAt")
     return query
@@ -49,7 +63,7 @@ final class Event: PFObject {
 extension Event: PFSubclassing {
   // required protocol method
   static func parseClassName() -> String {
-    return R.eventPost
+    return "Event"
   }
 }
 

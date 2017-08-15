@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             $0.applicationId = appID
             $0.server = url
+         //   $0.publicServerURL = serverUrl
             
             
         }

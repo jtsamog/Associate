@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
 		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
-		30C3C37C1F4206DC008FAE9A /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C37B1F4206DC008FAE9A /* APIKeys.swift */; };
 		66A58F524420A987399878D0 /* Pods_Associate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */; };
+		FF3879031F4210D9002685B8 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3879021F4210D9002685B8 /* APIKeys.swift */; };
+		FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3879041F421C57002685B8 /* NewEventViewController.swift */; };
 		FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */; };
 		FF887C421F3B6E6E0095F5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C401F3B6E6E0095F5C9 /* Main.storyboard */; };
 		FF887C441F3B6E6E0095F5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */; };
@@ -34,10 +35,11 @@
 /* Begin PBXFileReference section */
 		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		30C3C3771F42049E008FAE9A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		30C3C37B1F4206DC008FAE9A /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.debug.xcconfig"; sourceTree = "<group>"; };
 		A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.release.xcconfig"; sourceTree = "<group>"; };
 		B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Associate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3879021F4210D9002685B8 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKeys.swift; path = ../APIKeys.swift; sourceTree = "<group>"; };
+		FF3879041F421C57002685B8 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		FF887C391F3B6E6E0095F5C9 /* Associate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Associate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF887C411F3B6E6E0095F5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */,
-				30C3C37B1F4206DC008FAE9A /* APIKeys.swift */,
+				FF3879021F4210D9002685B8 /* APIKeys.swift */,
 				FFEEFD6B1F3CF004002E0C9A /* Controllers */,
 				FFEEFD6C1F3CF018002E0C9A /* Model */,
 				FFEEFD6D1F3CF02D002E0C9A /* Views */,
@@ -176,6 +178,7 @@
 				FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */,
 				FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */,
 				FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */,
+				FF3879041F421C57002685B8 /* NewEventViewController.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -326,10 +329,11 @@
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
 				FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */,
 				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+				FF3879031F4210D9002685B8 /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
+				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
 				FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */,
-				30C3C37C1F4206DC008FAE9A /* APIKeys.swift in Sources */,
 				30C3C3721F4202DB008FAE9A /* R.swift in Sources */,
 				FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */,
 				FFEEFD961F3E1DE1002E0C9A /* EventTableViewController.swift in Sources */,

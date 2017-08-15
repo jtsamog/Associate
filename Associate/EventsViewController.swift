@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Parse
 
-class EventsViewController: UIViewController {
+
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Cells and Id
     //EventsVC uses newEventCell, id- newEvent, and eventCell, id - event
@@ -23,6 +25,9 @@ class EventsViewController: UIViewController {
     
     //MARK: Properties
     
+    
+    var eventsArray = [Event]()
+    
     var menuShowing = false
     
     
@@ -35,6 +40,38 @@ class EventsViewController: UIViewController {
         menuView.layer.shadowOpacity = 1
         
     }
+    
+    //MARK: TableView Methods
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        print("\(eventsArray.count) print 1")
+        return eventsArray.count
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell:EventTableViewCell = eventTableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! EventTableViewCell
+        
+        let event = eventsArray[indexPath.row]
+        cell.eventNameLabel.text = event["title"] as? String
+        cell.eventDetailsLabel.text = event["eventDescription"] as? String
+        cell.eventImageView.image = event.photo
+        
+        return cell
+    }
+    
+    //MARK: Actions
     
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         
@@ -52,3 +89,63 @@ class EventsViewController: UIViewController {
         menuShowing = !menuShowing
     }
 }
+
+//MARK: Lifecycle
+
+extension EventsViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Reload wall
+        
+        getEvents()
+    }
+    
+}
+
+
+//MARK: Event Pull
+
+private extension EventsViewController {
+    
+    
+    
+    func getEvents() {
+        
+        guard let query = Event.query() else {
+            
+            print("Unable to query events")
+            return
+        }
+        
+        query.findObjectsInBackground { [unowned self] objects, error in
+            
+            guard let objects = objects as? [Event] else {
+                
+                print("some problem getting objects")
+                return
+            }
+            self.eventsArray = objects
+            //self.eventTableView.reloadData()
+            for (index, event)  in objects.enumerated() {
+                event.image.getDataInBackground { [unowned self] data, error in
+                    if error == nil {
+                        if let data = data {
+                            self.eventsArray[index].photo = UIImage(data: data)
+                        }
+                        DispatchQueue.main.async {
+                            self.eventTableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

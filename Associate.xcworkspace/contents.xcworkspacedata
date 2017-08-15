@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:APIKeys.swift">
+   </FileRef>
+   <FileRef
       location = "group:Associate.xcodeproj">
    </FileRef>
    <FileRef

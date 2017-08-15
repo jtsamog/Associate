@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
     
@@ -44,7 +45,7 @@ class SignUpViewController: UIViewController {
                 
                 return
             }
-//            pop over to login vc
+                
         }
         
     }
