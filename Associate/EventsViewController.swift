@@ -98,14 +98,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.performSegue(withIdentifier:"logoutPop", sender: nil)
     }
-    
-    
-    
-        
 }
-
-
-
 
 
 //MARK: Lifecycle
