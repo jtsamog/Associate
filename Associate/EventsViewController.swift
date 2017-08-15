@@ -17,33 +17,35 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: Outlets
     
-    @IBOutlet weak var newEventTableView: UITableView!
     @IBOutlet weak var eventTableView: UITableView!
     
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var leadingContraint: NSLayoutConstraint!
     
+    @IBOutlet var blueButtons: [UIButton]!
+    
+    
     //MARK: Properties
-    
-    
     var eventsArray = [Event]()
-    
     var menuShowing = false
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.title = "Events Nearby"
         
         menuView.layer.shadowOpacity = 1
         
+        prettyUI()
     }
     
     //MARK: TableView Methods
+    //New Event
     
     
+    //All Nearby events
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -52,13 +54,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        print("\(eventsArray.count) print 1")
-        return eventsArray.count
-        
-        
+            
+            print("\(eventsArray.count) print 1")
+            return eventsArray.count
+      
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         
         
         let cell:EventTableViewCell = eventTableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! EventTableViewCell
@@ -69,6 +72,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.eventImageView.image = event.photo
         
         return cell
+        
     }
     
     //MARK: Actions
@@ -84,6 +88,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             leadingContraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
+                
             })
         }
         menuShowing = !menuShowing
@@ -118,6 +123,22 @@ extension EventsViewController {
 //MARK: Event Pull
 
 private extension EventsViewController {
+    
+    
+    func prettyUI() {
+        
+        for button in blueButtons {
+            
+            button.layer.backgroundColor = UIColor.white.cgColor
+            button.layer.borderColor = UIColor.blue.cgColor
+            button.layer.borderWidth = 3
+            button.layer.cornerRadius = 10
+            
+            
+        }
+        
+        
+    }
     
     
     

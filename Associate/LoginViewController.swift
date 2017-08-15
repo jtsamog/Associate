@@ -16,6 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet var buttons: [UIButton]!
+    
+    
     //MARK: Properties
     let warningAlert = UIAlertController(title: "Invalid", message: "Username or password is invalid. Please try again.", preferredStyle: .alert)
     let okAlert = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -24,6 +27,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        prettyUI()
         
         warningAlert.addAction(okAlert)
         
@@ -57,5 +62,24 @@ class LoginViewController: UIViewController {
             print("Successfully Logged In")
             self.performSegue(withIdentifier: "login", sender: nil)
         }
+    }
+}
+
+
+//MARK: UI
+
+private extension LoginViewController {
+    
+    func prettyUI() {
+        
+        
+        for b in buttons {
+            
+            b.layer.cornerRadius = 10
+            
+        }
+        
+        usernameTextField.layer.cornerRadius = 10
+        passwordTextField.layer.cornerRadius = 10
     }
 }
