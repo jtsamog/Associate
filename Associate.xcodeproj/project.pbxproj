@@ -15,7 +15,6 @@
 		FF887C421F3B6E6E0095F5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C401F3B6E6E0095F5C9 /* Main.storyboard */; };
 		FF887C441F3B6E6E0095F5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */; };
 		FF887C471F3B6E6E0095F5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C451F3B6E6E0095F5C9 /* LaunchScreen.storyboard */; };
-		FFB139221F434CF000CA13ED /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB139211F434CF000CA13ED /* APIKeys.swift */; };
 		FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */; };
 		FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */; };
 		FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */; };
@@ -30,6 +29,7 @@
 		FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */; };
 		FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */; };
 		FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */; };
+		FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFAF7E21F436C2D00C75272 /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,6 @@
 		FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF887C461F3B6E6E0095F5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF887C481F3B6E6E0095F5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFB139211F434CF000CA13ED /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKeys.swift; path = ../APIKeys.swift; sourceTree = "<group>"; };
 		FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
 		FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
+		FFFAF7E21F436C2D00C75272 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 				FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */,
 				30C3C3771F42049E008FAE9A /* Event.swift */,
 				30C3C3711F4202DB008FAE9A /* R.swift */,
-				FFB139211F434CF000CA13ED /* APIKeys.swift */,
+				FFFAF7E21F436C2D00C75272 /* APIKeys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
 				FFEEFDA41F3E1EF4002E0C9A /* NewEventTableViewCell.swift in Sources */,
 				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
-				FFB139221F434CF000CA13ED /* APIKeys.swift in Sources */,
+				FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
