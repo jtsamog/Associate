@@ -87,8 +87,19 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
         menuShowing = !menuShowing
+        }
+    
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        
+        PFUser.logOut()
+
+        _ = PFUser.current()
+        
+        self.performSegue(withIdentifier:"logoutPop", sender: nil)
     }
 }
+
 
 //MARK: Lifecycle
 
