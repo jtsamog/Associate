@@ -20,8 +20,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repasswordTextField: UITextField!
     
-    
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signupTapped(_ sender: UIButton) {
         
-        guard let username = usernameTextField.text, let password = passwordTextField.text else {
+        guard let username = usernameTextField.text , let password = passwordTextField.text else {
             
             //some error, display alert
             return
@@ -43,9 +42,11 @@ class SignUpViewController: UIViewController {
             guard success == true else {
                 
                 
+                
                 return
             }
-                
+            print("User successfully created")
+            self.performSegue(withIdentifier: "login", sender: nil)
         }
         
     }

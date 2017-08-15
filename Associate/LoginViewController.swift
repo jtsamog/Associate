@@ -16,11 +16,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    //MARK: Properties
+    let warningAlert = UIAlertController(title: "Invalid", message: "Username or password is invalid. Please try again.", preferredStyle: .alert)
+    let okAlert = UIAlertAction(title: "OK", style: .default, handler: nil)
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        warningAlert.addAction(okAlert)
+        
+        guard let user = PFUser.current(), user.isAuthenticated else {
+            
+            print ("Not current user")
+            return
+        }
+        self.performSegue(withIdentifier: "login", sender: nil)
     }
 
 
@@ -37,12 +49,13 @@ class LoginViewController: UIViewController {
             
             guard error == nil, success == true else {
                 
+                self.present(self.warningAlert, animated: true, completion: nil)
                 print(#line, "not logged in")
                 return
                 
             }
-            
-            
+            print("Successfully Logged In")
+            self.performSegue(withIdentifier: "login", sender: nil)
         }
     }
 }

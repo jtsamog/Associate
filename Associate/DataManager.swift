@@ -11,10 +11,8 @@ import Parse
 
 class DataManager  {
     
-    
+  
     //MARK: Login
-    
-    
     static func login(with userName: String, and password: String, completion:@escaping (Bool, Error?)-> Void) {
         PFUser.logInWithUsername(inBackground: userName, password: password) { user, error in
             guard let _ = user else {
@@ -27,7 +25,6 @@ class DataManager  {
 
     
     //MARK: SignUp
-    
     static func signup(with userName: String, and password: String, completion: @escaping (Bool, Error?)-> Void) {
         let user = PFUser()
         user.username = userName

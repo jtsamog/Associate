@@ -117,7 +117,6 @@
 				FFEEFD6B1F3CF004002E0C9A /* Controllers */,
 				FFEEFD6C1F3CF018002E0C9A /* Model */,
 				FFEEFD6D1F3CF02D002E0C9A /* Views */,
-				FFEEFD701F3CF776002E0C9A /* Storyboard */,
 				FF887C431F3B6E6E0095F5C9 /* Assets.xcassets */,
 				FF887C481F3B6E6E0095F5C9 /* Info.plist */,
 			);
@@ -147,6 +146,7 @@
 		FFEEFD6D1F3CF02D002E0C9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FFEEFD701F3CF776002E0C9A /* Storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
