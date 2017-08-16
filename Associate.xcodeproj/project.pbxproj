@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045ADE01F43A7CC00E734AC /* EventUser.swift */; };
 		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
 		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
 		66A58F524420A987399878D0 /* Pods_Associate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3045ADE01F43A7CC00E734AC /* EventUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUser.swift; sourceTree = "<group>"; };
 		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		30C3C3771F42049E008FAE9A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */,
 				30C3C3771F42049E008FAE9A /* Event.swift */,
+				3045ADE01F43A7CC00E734AC /* EventUser.swift */,
 				30C3C3711F4202DB008FAE9A /* R.swift */,
 				FFFAF7E21F436C2D00C75272 /* APIKeys.swift */,
 			);
@@ -333,7 +336,9 @@
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
-				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+
+				3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */,
+							FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
 				FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
