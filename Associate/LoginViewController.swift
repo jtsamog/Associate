@@ -75,11 +75,11 @@ private extension LoginViewController {
         
         for b in buttons {
             
-            b.layer.cornerRadius = 10
+            b.layer.cornerRadius = 16
             
         }
         
-        usernameTextField.layer.cornerRadius = 10
-        passwordTextField.layer.cornerRadius = 10
+        usernameTextField.layer.cornerRadius = 16
+        passwordTextField.layer.cornerRadius = 16
     }
 }

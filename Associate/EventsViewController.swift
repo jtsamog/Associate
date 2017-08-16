@@ -24,6 +24,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet var blueButtons: [UIButton]!
     
+    @IBOutlet weak var newEventView: UIView!
+    
+    
     
     //MARK: Properties
     var eventsArray = [Event]()
@@ -103,6 +106,18 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.performSegue(withIdentifier:"logoutPop", sender: nil)
     }
+    
+    
+    @IBAction func newEventTapped(_ sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.newEventView.backgroundColor = UIColor.blue
+            
+        }, completion: nil)
+
+        self.performSegue(withIdentifier: "newEvent", sender: nil)
+    }
+    
 }
 
 
