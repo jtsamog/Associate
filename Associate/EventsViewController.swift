@@ -26,6 +26,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var newEventView: UIView!
     
+    @IBOutlet weak var blurView: UIView!
     
     
     //MARK: Properties
@@ -38,6 +39,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Do any additional setup after loading the view.
         self.title = "Events Nearby"
+        
+        blurView.isHidden = true
         
         menuView.layer.shadowOpacity = 1
         
@@ -86,16 +89,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             leadingContraint.constant = -200
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
+                
+                self.blurView.isHidden = true
             })
         } else {
             leadingContraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
+        
+                self.blurView.isHidden = false
                 
             })
+            
         }
         menuShowing = !menuShowing
-        }
+    }
     
     
     @IBAction func logoutTapped(_ sender: Any) {
@@ -110,10 +118,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func newEventTapped(_ sender: UITapGestureRecognizer) {
         
-        UIView.animate(withDuration: 0.1, animations: {
-            self.newEventView.backgroundColor = UIColor.blue
+        UIView.animate(withDuration: 0.3, animations: { self.newEventView.backgroundColor = UIColor.blue }, completion: { ( value :Bool) in
             
-        }, completion: nil)
+            self.newEventView.backgroundColor = UIColor.white
+        })
 
         self.performSegue(withIdentifier: "newEvent", sender: nil)
     }
@@ -143,16 +151,15 @@ private extension EventsViewController {
     func prettyUI() {
         
         for button in blueButtons {
-            
             button.layer.backgroundColor = UIColor.white.cgColor
             button.layer.borderColor = UIColor.blue.cgColor
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
-            
-            
         }
         
-        
+        newEventView.layer.borderColor = UIColor.blue.cgColor
+        newEventView.layer.borderWidth = 3
+        newEventView.layer.cornerRadius = 14
     }
     
     

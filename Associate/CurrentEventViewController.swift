@@ -18,6 +18,7 @@ class CurrentEventViewController: UIViewController {
     
     @IBOutlet var blueButtons: [UIButton]!
     
+    @IBOutlet weak var blurView: UIView!
     
     
     //MARK: Properties
@@ -31,6 +32,8 @@ class CurrentEventViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        blurView.isHidden = true
+        
         sideMenu.layer.shadowOpacity = 1
         
         prettyUI()
@@ -43,11 +46,15 @@ class CurrentEventViewController: UIViewController {
             leadingContraint.constant = -200
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
+                
+                self.blurView.isHidden = true
             })
         } else {
             leadingContraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
+                
+                self.blurView.isHidden = false
             })
         }
         menuShowing = !menuShowing

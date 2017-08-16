@@ -7,6 +7,7 @@ target 'Associate' do
 
   # Pods for Associate
 
-    pod 'Parse'
+    	pod 'Parse'
+	pod 'MAThemeKit', '~> 1.0'
 
 end

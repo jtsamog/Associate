@@ -309,11 +309,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Associate/Pods-Associate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MAThemeKit/MAThemeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MAThemeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +338,8 @@
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
-
 				3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */,
-							FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
+				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
 				FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
