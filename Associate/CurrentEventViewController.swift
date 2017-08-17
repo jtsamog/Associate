@@ -18,6 +18,11 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet var blueButtons: [UIButton]!
     @IBOutlet weak var blurView: UIView!
     
+    @IBOutlet weak var joinView: UIView!
+    @IBOutlet weak var joinImageView: UIImageView!
+    @IBOutlet weak var joinButtn: UIButton!
+
+    var event: Event?
     
     //MARK: Harrisons Outlets
     
@@ -44,6 +49,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         // Do any additional setup after loading the view.
         
+        
+        joinImageView.image = event?.photo
+    
         blurView.isHidden = true
         
         sideMenu.layer.shadowOpacity = 1
@@ -64,6 +72,14 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     //MARK: Actions 
+    
+    @IBAction func joinTapped(_ sender: Any) {
+        
+        
+        
+        
+    }
+    
     
     // Chat start
     @IBAction func sendButtonTapped(_ sender: UIButton) {

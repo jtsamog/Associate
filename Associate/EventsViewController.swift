@@ -70,8 +70,32 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.eventDetailsLabel.text = event["eventDescription"] as? String
         cell.eventImageView.image = event.photo
         
-        cellUI(cell: cell)
+       // cellUI(cell: cell)
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedEvent = eventsArray[(indexPath as NSIndexPath).row]
+        self.performSegue(withIdentifier: "joinEvent", sender: selectedEvent)
+        
+        print("\(selectedEvent)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let inEvent = sender as? Event {
+            let navVC = segue.destination as? UINavigationController
+            let currentVC = navVC?.viewControllers.first as? CurrentEventViewController
+            
+            currentVC?.event = inEvent
+            //currentVC?.joinImageView.image = inEvent.photo
+            
+            //currentVC?.joinImageView.image = inEvent.photo
+            
+        }
         
     }
     
@@ -176,11 +200,11 @@ private extension EventsViewController {
         newEventView.layer.cornerRadius = 14
     }
     
-    func cellUI(cell: EventTableViewCell) {
-        
-        
-        cell.eventJoinButton.layer.cornerRadius = 14
-    }
+//    func cellUI(cell: EventTableViewCell) {
+//        
+//        
+//        cell.eventJoinButton.layer.cornerRadius = 14
+//    }
     
     
 //    func userJoined() -> PFRelation<EventUser> {
