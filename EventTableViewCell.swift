@@ -16,9 +16,6 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
     @IBOutlet weak var eventJoinButton: UIButton!
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,8 +31,9 @@ class EventTableViewCell: UITableViewCell {
     //MARK: Actions 
     
     @IBAction func joinEventTapped(_ sender: UIButton) {
-        
+    
         
     }
+
 
 }

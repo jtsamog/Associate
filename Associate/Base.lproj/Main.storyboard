@@ -519,7 +519,7 @@
                                 </prototypes>
                             </tableView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85P-DD-eQE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLT-sm-9Xj">
@@ -636,7 +636,7 @@
                             <constraint firstItem="85P-DD-eQE" firstAttribute="leading" secondItem="tLT-sm-9Xj" secondAttribute="trailing" constant="10" id="ZeV-Sg-S2S"/>
                             <constraint firstAttribute="trailing" secondItem="85P-DD-eQE" secondAttribute="trailing" id="bxk-tz-7cG"/>
                             <constraint firstItem="C0A-wJ-z3r" firstAttribute="top" secondItem="4to-Vh-ctN" secondAttribute="bottom" id="dEo-aI-xV4"/>
-                            <constraint firstItem="C0A-wJ-z3r" firstAttribute="top" secondItem="85P-DD-eQE" secondAttribute="bottom" constant="60" id="dbI-do-gOV"/>
+                            <constraint firstItem="C0A-wJ-z3r" firstAttribute="top" secondItem="85P-DD-eQE" secondAttribute="bottom" constant="80" id="dbI-do-gOV"/>
                             <constraint firstAttribute="trailing" secondItem="4to-Vh-ctN" secondAttribute="trailing" id="iCk-v2-Qdf"/>
                             <constraint firstItem="802-FF-wbe" firstAttribute="top" secondItem="g60-hc-oJj" secondAttribute="bottom" id="jSj-Od-M8T"/>
                             <constraint firstItem="tLT-sm-9Xj" firstAttribute="leading" secondItem="dmi-rb-ePd" secondAttribute="leading" constant="-200" id="qf5-ch-uHw"/>

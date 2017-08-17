@@ -103,6 +103,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func joinTapped(_ sender: UIButton) {
         
         
+        let joinedEvent = Event()
+        
+        let member = PFUser.current()
+        
+        let relation:PFRelation = joinedEvent.relation(forKey: "membersInEvent")
+        
+        relation.add(member!)
+        
+        joinedEvent.saveInBackground()
+
+    
         self.performSegue(withIdentifier: "join", sender: nil)
     
     }
@@ -170,6 +181,17 @@ private extension EventsViewController {
         
         cell.eventJoinButton.layer.cornerRadius = 14
     }
+    
+    
+//    func userJoined() -> PFRelation<EventUser> {
+//        
+//        let joinedEvent = PFObject(className:"Event")
+//        
+//        joinedEvent["membersInEvent"] =  PFRelation<EventUser>
+//        
+//        joinedEvent.saveInBackground()
+//
+//    }
     
     
     func getEvents() {
