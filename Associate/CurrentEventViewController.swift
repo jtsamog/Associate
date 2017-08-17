@@ -75,8 +75,16 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func joinTapped(_ sender: Any) {
         
+        let joinedEvent = event
         
+        let member = PFUser.current()
         
+        let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
+        
+        relation.add(member!)
+        
+        joinedEvent?.saveInBackground()
+
         
     }
     
