@@ -92,13 +92,18 @@ private extension NewEventViewController {
     
     func saveEvent(_ file: PFFile) {
         
-        guard let currentUser = PFUser.current() else {
+      guard let currentUser = PFUser.current() else {
             print("Not current user")
             return
         }
+      guard let loc = EventUser.current()?.userCurrentLoc else {
+        print("User location not available")
+        return
+      }
+      
         
-        let newEvent = Event(title: eventTitleTextField.text, image: file, user: currentUser, descrip: eventDescriptionTextField.text)
-        
+      let newEvent = Event(title: eventTitleTextField.text, image: file, user: currentUser, descrip: eventDescriptionTextField.text, addressGeoLoc: loc)
+      
         newEvent.saveInBackground { [unowned self] succeeded, error in
             
             if succeeded {
