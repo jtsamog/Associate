@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Parse
 
-class CurrentEventViewController: UIViewController {
+class CurrentEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var sideMenu: UIView!
@@ -35,7 +36,7 @@ class CurrentEventViewController: UIViewController {
     //MARK: Properties
     var menuShowing = false
     
-    
+    var messagesArray:[String] = [String]()
     
     
     override func viewDidLoad() {
@@ -48,24 +49,49 @@ class CurrentEventViewController: UIViewController {
         sideMenu.layer.shadowOpacity = 1
         
         prettyUI()
+        
+        // Chat Start
+        self.messageTableView.dataSource = self
+        self.messageTableView.delegate = self
+        
+        self.messageTextField.delegate = self
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.tableViewTapped))
+        self.messageTableView.addGestureRecognizer(tapGesture)
+        
+        self.retrieveMessages()
+        // Chat End
+
     }
     
     //MARK: Actions 
     
-    
+    // Chat start
     @IBAction func sendButtonTapped(_ sender: UIButton) {
         
+        self.messageTextField.endEditing(true)
+        self.messageTextField.isEnabled = false
+        self.sendButton.isEnabled = false
         
+        let newMessageObject = PFObject(className:"Messages")
+        newMessageObject["Text"] = self.messageTextField.text
+        newMessageObject.saveInBackground(block: { (success, error) -> Void in
+            if error == nil {
+                self.retrieveMessages()
+                print("Saved in server")
+            } else {
+                print(error!)
+            }
+        })
         
-        
-        
-        
-        
-        
-        
-        
-        
+        DispatchQueue.main.async {
+            
+            self.messageTextField.isEnabled = true
+            self.sendButton.isEnabled = true
+            self.messageTextField.text = ""
+            
+        }
     }
+    // Chat End
   
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         
@@ -92,6 +118,77 @@ class CurrentEventViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Chat Start
+    //MARK: Textfield Delegate
+    func tableViewTapped() {
+        
+        self.messageTextField.endEditing(true)
+        
+    }
+    
+    func retrieveMessages() {
+        
+        let query = PFQuery(className: "Messages")
+        
+        query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
+            
+            self.messagesArray = [String]()
+            
+            for messageObject in objects! {
+                
+                let messageText:String? = (messageObject as PFObject)["Text"] as? String
+                
+                if messageText != nil {
+                    self.messagesArray.append(messageText!)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                
+                self.messageTableView.reloadData()
+                
+            }
+            
+            
+            
+        })
+    }
+
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.21, animations: {
+            self.dockViewHeightConstaint.constant = 335
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.dockViewHeightConstaint.constant = 60
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    
+    //MARK: Datasource/Delegate
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.messageTableView.dequeueReusableCell(withIdentifier: "post", for: indexPath)
+        cell.textLabel?.text = self.messagesArray[indexPath.row]
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return messagesArray.count
+        
+    }
+
+    // Chat End
 }
 
 //MARK: UICode 
@@ -118,6 +215,7 @@ private extension CurrentEventViewController {
 }
 
 
-    
-  
+
+
+
 
