@@ -19,6 +19,7 @@ final class Event: PFObject {
     @NSManaged var addressGeoLoc: PFGeoPoint
     @NSManaged var image: PFFile
     @NSManaged var user : PFUser
+  
     var photo: UIImage?
   
   // MARK: - Initializers

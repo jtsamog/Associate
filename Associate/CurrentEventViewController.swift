@@ -13,12 +13,23 @@ class CurrentEventViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var leadingContraint: NSLayoutConstraint!
-    
     @IBOutlet weak var leaveEventButton: UIButton!
-    
     @IBOutlet var blueButtons: [UIButton]!
-    
     @IBOutlet weak var blurView: UIView!
+    
+    
+    //MARK: Harrisons Outlets
+    
+    @IBOutlet weak var messageTableView: UITableView!
+    
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var sendButton: UIButton!
+    
+    @IBOutlet weak var dockViewHeightConstaint: NSLayoutConstraint!
+    
+    
+    
     
     
     //MARK: Properties
@@ -39,7 +50,23 @@ class CurrentEventViewController: UIViewController {
         prettyUI()
     }
     
+    //MARK: Actions 
     
+    
+    @IBAction func sendButtonTapped(_ sender: UIButton) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+  
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         
         if(menuShowing) {

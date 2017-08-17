@@ -23,6 +23,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var blueButtons: [UIButton]!
     @IBOutlet weak var newEventView: UIView!
     @IBOutlet weak var blurView: UIView!
+    
     //MARK: Properties
     
     var eventsArray = [Event]()
@@ -172,17 +173,12 @@ private extension EventsViewController {
     
     
     func getEvents() {
-        
         guard let query = Event.query() else {
-            
             print("Unable to query events")
             return
         }
-        
         query.findObjectsInBackground { [unowned self] objects, error in
-            
             guard let objects = objects as? [Event] else {
-                
                 print("some problem getting objects")
                 return
             }
@@ -190,23 +186,25 @@ private extension EventsViewController {
             //self.eventTableView.reloadData()
             for (index, event)  in objects.enumerated() {
                 event.image.getDataInBackground { [unowned self] data, error in
-                    if error == nil {
-                        if let data = data {
-                            self.eventsArray[index].photo = UIImage(data: data)
-                        }
-                        DispatchQueue.main.async {
-                            self.eventTableView.reloadData()
-                        }
+                    if let error = error {
+                        print(#line, error.localizedDescription)
+                        return
                     }
+                    guard let data = data else {
+                        print(#line, "No data help!")
+                        return
+                    }
+                    self.eventsArray[index].photo = UIImage(data: data)
+                    //          DispatchQueue.main.async {
+                    self.eventTableView.reloadData()
+                    //          }
                 }
             }
         }
     }
+    
+    
+    
+    
+    
 }
-
-
-
-
-
-
-

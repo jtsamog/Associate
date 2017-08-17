@@ -27,15 +27,33 @@ class DataManager  {
 
     
     //MARK: SignUp
+//    static func signup(with userName: String, and password: String, completion: @escaping (Bool, Error?)-> Void) {
+//        let user = PFUser()
+//        user.username = userName
+//        user.password = password
+//        user.signUpInBackground { success, error in
+//            completion(success, error)
+//        }
+//    }
+
+    
     static func signup(with userName: String, and password: String, completion: @escaping (Bool, Error?)-> Void) {
-        let user = PFUser()
-        user.username = userName
-        user.password = password
-        user.signUpInBackground { success, error in
-            completion(success, error)
+        
+        //get user current location
+        PFGeoPoint.geoPointForCurrentLocation() {(geopoint: PFGeoPoint?, error: Error?) -> Void in
+            if let error = error {
+                print(#line, error)
+                return
+            }
+            let user = EventUser(userCurrentLoc:geopoint)
+            
+            user.username = userName
+            user.password = password
+            user.signUpInBackground { success, error in
+                completion(success, error)
+            }
         }
     }
-
     
     
 }
