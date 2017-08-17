@@ -19,11 +19,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repasswordTextField: UITextField!
-    
-
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        prettyUI()
 
         // Do any additional setup after loading the view.
     }
@@ -50,5 +52,27 @@ class SignUpViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+}
 
+//MARK: UI
+
+private extension SignUpViewController {
+    
+    func prettyUI() {
+        
+        emailTextField.layer.cornerRadius = 16
+        nameTextField.layer.cornerRadius = 16
+        usernameTextField.layer.cornerRadius = 16
+        passwordTextField.layer.cornerRadius = 16
+        repasswordTextField.layer.cornerRadius = 16
+        signupButton.layer.cornerRadius = 16
+        cancelButton.layer.cornerRadius = 16
+    }
+    
+    
 }

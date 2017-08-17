@@ -138,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="M8y-e7-6f2">
-                                <rect key="frame" x="36" y="83.5" width="303" height="500"/>
+                                <rect key="frame" x="36" y="84" width="303" height="500"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noPhotoSelected" translatesAutoresizingMaskIntoConstraints="NO" id="TxJ-T0-dyk">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="200"/>
@@ -201,17 +201,34 @@
                                     <action selector="cancelTapped:" destination="seh-UE-NBC" eventType="touchUpInside" id="fsQ-Yt-afp"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlD-zy-yP4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Create an event" id="86M-tq-DHj"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6a-Ab-iPe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="leading" secondItem="J1E-BA-GP9" secondAttribute="leading" id="5bB-gs-9LI"/>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="bottom" secondItem="tlD-zy-yP4" secondAttribute="top" id="DJe-tA-SD0"/>
                             <constraint firstItem="M8y-e7-6f2" firstAttribute="leading" secondItem="J1E-BA-GP9" secondAttribute="leadingMargin" constant="20" id="FjO-0H-7ug"/>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="leading" secondItem="tlD-zy-yP4" secondAttribute="leading" id="HJu-fh-fjl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M8y-e7-6f2" secondAttribute="trailing" constant="20" id="Jsd-gJ-NvE"/>
                             <constraint firstItem="M8y-e7-6f2" firstAttribute="top" secondItem="TRQ-mx-eEU" secondAttribute="bottom" constant="63.5" id="QgQ-EQ-Qlf"/>
                             <constraint firstItem="a96-mn-YAn" firstAttribute="leading" secondItem="J1E-BA-GP9" secondAttribute="leading" constant="15" id="Qw0-vv-CyH"/>
+                            <constraint firstAttribute="trailing" secondItem="n6a-Ab-iPe" secondAttribute="trailing" id="Rri-Sd-x5D"/>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="trailing" secondItem="tlD-zy-yP4" secondAttribute="trailing" id="YOK-tN-PgL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vMO-k6-Wqv" secondAttribute="trailing" constant="8" id="Yhg-5d-5ka"/>
                             <constraint firstItem="M8y-e7-6f2" firstAttribute="centerY" secondItem="J1E-BA-GP9" secondAttribute="centerY" id="a3r-LT-zZA"/>
                             <constraint firstItem="M8y-e7-6f2" firstAttribute="centerX" secondItem="J1E-BA-GP9" secondAttribute="centerX" id="ceJ-K3-BdO"/>
                             <constraint firstItem="g2P-g7-r0d" firstAttribute="top" secondItem="vMO-k6-Wqv" secondAttribute="bottom" constant="20" id="dUx-04-ROM"/>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="top" secondItem="J1E-BA-GP9" secondAttribute="top" id="lZ9-uI-7hg"/>
+                            <constraint firstItem="n6a-Ab-iPe" firstAttribute="bottom" secondItem="TRQ-mx-eEU" secondAttribute="bottom" id="tiG-60-Nzr"/>
                             <constraint firstItem="g2P-g7-r0d" firstAttribute="top" secondItem="a96-mn-YAn" secondAttribute="bottom" constant="20" id="wHu-xu-Kiq"/>
                         </constraints>
                     </view>
@@ -229,7 +246,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2260" y="-638"/>
+            <point key="canvasLocation" x="2260" y="-638.2308845577212"/>
         </scene>
         <!--Title-->
         <scene sceneID="G0M-c2-yDo">
@@ -243,6 +260,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Event Header" translatesAutoresizingMaskIntoConstraints="NO" id="MaB-8J-b2A">
+                                <rect key="frame" x="2" y="206" width="370" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mrT-81-jUh"/>
+                                    <constraint firstAttribute="width" constant="370" id="pOj-Q9-0xO"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="175" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T9c-ub-eGL">
                                 <rect key="frame" x="0.0" y="227" width="375" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -291,8 +315,7 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="joinEventTapped:" destination="Mcb-74-X2l" eventType="touchUpInside" id="onS-7y-xAe"/>
-                                                        <segue destination="oDB-v8-uyR" kind="presentation" id="T3x-sU-5vf"/>
+                                                        <action selector="joinTapped:" destination="F5L-KH-wJj" eventType="touchUpInside" id="Rdt-cg-KSu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -310,6 +333,7 @@
                                         <connections>
                                             <outlet property="eventDetailsLabel" destination="gJB-54-i85" id="GeZ-fY-zXY"/>
                                             <outlet property="eventImageView" destination="f8r-6V-lUO" id="gn5-Vt-acQ"/>
+                                            <outlet property="eventJoinButton" destination="VRo-eI-tHU" id="x4o-YL-67Q"/>
                                             <outlet property="eventNameLabel" destination="PQd-pw-WBD" id="Dad-zg-kpk"/>
                                         </connections>
                                     </tableViewCell>
@@ -320,7 +344,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v48-vc-npq">
-                                <rect key="frame" x="12.5" y="92" width="350" height="102"/>
+                                <rect key="frame" x="12.5" y="79" width="350" height="102"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-lZ-Ost">
                                         <rect key="frame" x="16" y="21" width="60" height="60"/>
@@ -370,7 +394,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Scf-Yy-kOQ"/>
                                                 </constraints>
                                                 <state key="normal" title="Profile ">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="WA5-fa-7lL" kind="show" id="QsS-9f-Urf"/>
@@ -382,7 +406,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Aci-5C-QUa"/>
                                                 </constraints>
                                                 <state key="normal" title="Connections">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="sTW-Vj-Nsa" kind="show" id="huF-Vq-d3s"/>
@@ -394,7 +418,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="pOa-VQ-mJ8"/>
                                                 </constraints>
                                                 <state key="normal" title="Logout">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logoutTapped:" destination="F5L-KH-wJj" eventType="touchUpInside" id="xyf-9A-XM1"/>
@@ -411,7 +435,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Dt4-eL-1pU" firstAttribute="leading" secondItem="Ns0-Ad-jFk" secondAttribute="leading" constant="20" id="Bbc-dd-tzM"/>
                                     <constraint firstAttribute="width" constant="190" id="GeK-QW-CCX"/>
@@ -427,9 +451,11 @@
                             <constraint firstItem="v48-vc-npq" firstAttribute="centerX" secondItem="OKo-xM-Qik" secondAttribute="centerX" id="4YU-95-mV7"/>
                             <constraint firstItem="evX-wJ-ctD" firstAttribute="top" secondItem="sqK-sV-dUp" secondAttribute="bottom" id="8ni-cm-vKd"/>
                             <constraint firstAttribute="trailing" secondItem="sqK-sV-dUp" secondAttribute="trailing" id="9Ao-II-CIE"/>
+                            <constraint firstItem="MaB-8J-b2A" firstAttribute="top" secondItem="v48-vc-npq" secondAttribute="bottom" constant="25" id="RTE-HL-zGr"/>
                             <constraint firstItem="sqK-sV-dUp" firstAttribute="leading" secondItem="Ns0-Ad-jFk" secondAttribute="trailing" id="SEK-Cq-2lV"/>
                             <constraint firstItem="Ns0-Ad-jFk" firstAttribute="leading" secondItem="OKo-xM-Qik" secondAttribute="leading" constant="-200" id="Say-8E-fKe"/>
-                            <constraint firstItem="v48-vc-npq" firstAttribute="top" secondItem="HtH-4d-nnT" secondAttribute="bottom" constant="28" id="gbc-hd-RCf"/>
+                            <constraint firstItem="MaB-8J-b2A" firstAttribute="centerX" secondItem="OKo-xM-Qik" secondAttribute="centerX" id="dr6-HM-Xoq"/>
+                            <constraint firstItem="v48-vc-npq" firstAttribute="top" secondItem="HtH-4d-nnT" secondAttribute="bottom" constant="15" id="gbc-hd-RCf"/>
                             <constraint firstItem="sqK-sV-dUp" firstAttribute="top" secondItem="HtH-4d-nnT" secondAttribute="bottom" id="kUt-GZ-shn"/>
                             <constraint firstItem="Ns0-Ad-jFk" firstAttribute="top" secondItem="HtH-4d-nnT" secondAttribute="bottom" id="oRo-wa-JJs"/>
                         </constraints>
@@ -452,6 +478,7 @@
                         <outletCollection property="blueButtons" destination="tn8-NU-eP8" collectionClass="NSMutableArray" id="A2b-ac-bgO"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutPop" id="cCY-BN-Cvr"/>
                         <segue destination="seh-UE-NBC" kind="presentation" identifier="newEvent" id="hWs-ym-RWC"/>
+                        <segue destination="oDB-v8-uyR" kind="presentation" identifier="join" id="OQZ-dv-X4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hs-8J-mby" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -538,7 +565,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="iiw-69-4mT"/>
                                                 </constraints>
                                                 <state key="normal" title="Leave Event">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="leaveEventTapped:" destination="MvU-aL-ZAI" eventType="touchUpInside" id="9Jc-BU-eDA"/>
@@ -551,7 +578,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="g29-3G-01g"/>
                                                 </constraints>
                                                 <state key="normal" title="Profile">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40O-4g-JyP" userLabel="Connections">
@@ -561,7 +588,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="hdi-kI-idh"/>
                                                 </constraints>
                                                 <state key="normal" title="Connections">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsk-N3-r9d" userLabel="Logout">
@@ -571,7 +598,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="wmS-3n-h43"/>
                                                 </constraints>
                                                 <state key="normal" title="Logout">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -587,7 +614,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gvP-6s-zTD" firstAttribute="centerY" secondItem="tLT-sm-9Xj" secondAttribute="centerY" id="Cv2-za-Bnt"/>
                                     <constraint firstItem="gvP-6s-zTD" firstAttribute="leading" secondItem="tLT-sm-9Xj" secondAttribute="leading" constant="20" id="DPq-0l-11z"/>
@@ -614,12 +641,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jMs-bc-9eY">
-                        <barButtonItem key="leftBarButtonItem" title="Table" id="iqN-yT-RVA">
+                        <barButtonItem key="leftBarButtonItem" image="Table" id="iqN-yT-RVA">
                             <connections>
                                 <action selector="menuTapped:" destination="MvU-aL-ZAI" id="2XO-Yp-pIL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Users" id="9rZ-Q1-xm6">
+                        <barButtonItem key="rightBarButtonItem" image="UserInEvent" id="9rZ-Q1-xm6">
                             <connections>
                                 <segue destination="oAY-sC-ocN" kind="show" id="7rJ-dM-NK3"/>
                             </connections>
@@ -929,6 +956,17 @@
                                     <constraint firstAttribute="height" constant="60" id="rmy-xS-9Ld"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfi-RH-ZpW">
+                                <rect key="frame" x="147" y="617" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Xz8-p2-xBR"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="o6c-Oi-Wcg" eventType="touchUpInside" id="ZUD-cP-JrJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -938,6 +976,8 @@
                             <constraint firstItem="8Kq-ML-W8s" firstAttribute="centerX" secondItem="fgF-Tr-e7P" secondAttribute="centerX" id="Jft-YZ-G5x"/>
                             <constraint firstItem="rJz-uT-4lw" firstAttribute="centerY" secondItem="fgF-Tr-e7P" secondAttribute="centerY" id="Key-Ue-6dh"/>
                             <constraint firstItem="gGH-i4-pyf" firstAttribute="top" secondItem="8Kq-ML-W8s" secondAttribute="bottom" constant="22" id="Ndd-lC-DKf"/>
+                            <constraint firstItem="Mfi-RH-ZpW" firstAttribute="top" secondItem="1DI-NK-zjx" secondAttribute="bottom" constant="30" id="cVE-Wl-dqc"/>
+                            <constraint firstItem="Mfi-RH-ZpW" firstAttribute="centerX" secondItem="fgF-Tr-e7P" secondAttribute="centerX" id="fCT-QO-hFr"/>
                             <constraint firstItem="1DI-NK-zjx" firstAttribute="centerX" secondItem="fgF-Tr-e7P" secondAttribute="centerX" id="j5V-gC-pHJ"/>
                             <constraint firstItem="rJz-uT-4lw" firstAttribute="centerX" secondItem="fgF-Tr-e7P" secondAttribute="centerX" id="nQ5-Ec-cFY"/>
                             <constraint firstItem="1DI-NK-zjx" firstAttribute="top" secondItem="lgc-g0-99p" secondAttribute="bottom" constant="78" id="qmw-N2-fnY"/>
@@ -946,10 +986,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="Mfi-RH-ZpW" id="vCE-cp-S19"/>
                         <outlet property="emailTextField" destination="KUR-dR-o7H" id="bn1-6A-Tld"/>
                         <outlet property="nameTextField" destination="Wqx-Dp-kEX" id="AHQ-jb-Mhw"/>
                         <outlet property="passwordTextField" destination="7Md-ai-0ir" id="AxP-SJ-8pz"/>
                         <outlet property="repasswordTextField" destination="lgc-g0-99p" id="deH-kW-E5K"/>
+                        <outlet property="signupButton" destination="1DI-NK-zjx" id="PoZ-74-w9R"/>
                         <outlet property="usernameTextField" destination="NAI-1d-t7f" id="6Kv-Da-nLV"/>
                         <segue destination="F5L-KH-wJj" kind="show" identifier="login" id="jXu-p5-lZR"/>
                     </connections>
@@ -1084,11 +1126,13 @@
     </scenes>
     <resources>
         <image name="Combined Shape" width="50" height="50"/>
+        <image name="Event Header" width="327" height="23"/>
         <image name="Logo" width="272" height="302"/>
         <image name="Table" width="32" height="26"/>
+        <image name="UserInEvent" width="39" height="38"/>
         <image name="noPhotoSelected" width="617" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AQm-KA-DZg"/>
+        <segue reference="jXu-p5-lZR"/>
     </inferredMetricsTieBreakers>
 </document>

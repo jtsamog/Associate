@@ -15,6 +15,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
+    @IBOutlet weak var eventJoinButton: UIButton!
     
     
     

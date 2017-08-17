@@ -18,27 +18,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: Outlets
     
     @IBOutlet weak var eventTableView: UITableView!
-    
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var leadingContraint: NSLayoutConstraint!
-    
     @IBOutlet var blueButtons: [UIButton]!
-    
     @IBOutlet weak var newEventView: UIView!
-    
     @IBOutlet weak var blurView: UIView!
-    
-    
     //MARK: Properties
+    
     var eventsArray = [Event]()
     var menuShowing = false
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.title = "Events Nearby"
+        self.title = "ASSOCIATE"
         
         blurView.isHidden = true
         
@@ -68,8 +62,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
         let cell:EventTableViewCell = eventTableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! EventTableViewCell
         
         let event = eventsArray[indexPath.row]
@@ -77,6 +69,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.eventDetailsLabel.text = event["eventDescription"] as? String
         cell.eventImageView.image = event.photo
         
+        cellUI(cell: cell)
         return cell
         
     }
@@ -104,6 +97,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         menuShowing = !menuShowing
     }
+    
+    
+    @IBAction func joinTapped(_ sender: UIButton) {
+        
+        
+        self.performSegue(withIdentifier: "join", sender: nil)
+    
+    }
+    
+    
     
     
     @IBAction func logoutTapped(_ sender: Any) {
@@ -151,17 +154,21 @@ private extension EventsViewController {
     func prettyUI() {
         
         for button in blueButtons {
-            button.layer.backgroundColor = UIColor.white.cgColor
-            button.layer.borderColor = UIColor.blue.cgColor
+            button.layer.backgroundColor = UIColor.blue.cgColor
+            button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
-        
         newEventView.layer.borderColor = UIColor.blue.cgColor
         newEventView.layer.borderWidth = 3
         newEventView.layer.cornerRadius = 14
     }
     
+    func cellUI(cell: EventTableViewCell) {
+        
+        
+        cell.eventJoinButton.layer.cornerRadius = 14
+    }
     
     
     func getEvents() {

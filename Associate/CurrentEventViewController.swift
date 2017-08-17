@@ -73,15 +73,15 @@ private extension CurrentEventViewController {
     
     func prettyUI() {
         
-        leaveEventButton.layer.backgroundColor = UIColor.white.cgColor
-        leaveEventButton.layer.borderColor = UIColor.red.cgColor
+        leaveEventButton.layer.backgroundColor = UIColor.red.cgColor
+        leaveEventButton.layer.borderColor = UIColor.white.cgColor
         leaveEventButton.layer.borderWidth = 3
         leaveEventButton.layer.cornerRadius = 10
         
         for button in blueButtons {
 
-            button.layer.backgroundColor = UIColor.white.cgColor
-            button.layer.borderColor = UIColor.blue.cgColor
+            button.layer.backgroundColor = UIColor.blue.cgColor
+            button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
