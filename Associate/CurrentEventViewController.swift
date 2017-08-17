@@ -55,7 +55,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         self.messageTableView.delegate = self
         
         self.messageTextField.delegate = self
-        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.tableViewTapped))
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
         
         self.retrieveMessages()
