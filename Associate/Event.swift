@@ -47,12 +47,12 @@ final class Event: PFObject {
 //    self.image = image
 //    self.user = user
 //  }
-  
+   
   override init() {
     super.init()
   }
   
-  //MARK: - Overriden
+//  MARK: - Overriden
 //  override class func query() -> PFQuery<PFObject>? {
 //    let query = PFQuery(className: Event.parseClassName())
 //    query.includeKey("user")
