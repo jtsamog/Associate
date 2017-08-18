@@ -53,11 +53,23 @@ final class Event: PFObject {
   }
   
   //MARK: - Overriden
-  override class func query() -> PFQuery<PFObject>? {
-    let query = PFQuery(className: Event.parseClassName())
-    query.includeKey("user")
-    query.order(byDescending: "createdAt")
-    return query
+//  override class func query() -> PFQuery<PFObject>? {
+//    let query = PFQuery(className: Event.parseClassName())
+//    query.includeKey("user")
+//    query.order(byDescending: "createdAt")
+//    return query
+//  }
+  
+     override class func query()-> PFQuery<PFObject>? {
+      guard let userGeoPoint = EventUser.current()?.userCurrentLoc else {
+        print("User location not available")
+        return nil
+      }
+      let query = PFQuery(className: Event.parseClassName())
+      query.whereKey("addressGeoLoc", nearGeoPoint: userGeoPoint, withinMiles: 500.00)
+      query.limit = 7
+      query.includeKey("user")
+      return query
   }
   
 }
