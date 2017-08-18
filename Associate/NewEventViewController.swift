@@ -17,7 +17,8 @@ class NewEventViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var eventTitleTextField: UITextField!
     @IBOutlet weak var eventDescriptionTextField: UITextField!
     @IBOutlet weak var eventAddressTextField: UITextField!
-    
+
+  
     //MARK: Properties
     
     
@@ -101,7 +102,7 @@ private extension NewEventViewController {
         return
       }
       
-        
+      
       let newEvent = Event(title: eventTitleTextField.text, image: file, user: currentUser, descrip: eventDescriptionTextField.text, addressGeoLoc: loc)
       
         newEvent.saveInBackground { [unowned self] succeeded, error in

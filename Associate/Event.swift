@@ -19,11 +19,18 @@ final class Event: PFObject {
     @NSManaged var addressGeoLoc: PFGeoPoint?
     @NSManaged var image: PFFile
     @NSManaged var user : PFUser
+//    @NSManaged var eventMessage: String?
   
     var photo: UIImage?
   
   // MARK: - Initializers
-  init(title: String?, image: PFFile, user: PFUser, descrip: String?, addressGeoLoc: PFGeoPoint?) {
+  init(title: String?,
+       image: PFFile,
+       user: PFUser,
+       descrip: String?,
+       addressGeoLoc: PFGeoPoint?
+//    , eventMessage: String? = nil
+        ) {
         super.init()
         
         self.title = title
@@ -31,6 +38,7 @@ final class Event: PFObject {
         self.image = image
         self.user = user
         self.addressGeoLoc = addressGeoLoc
+//        self.eventMessage = eventMessage
   
     }
   

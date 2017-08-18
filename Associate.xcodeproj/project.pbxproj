@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302411C11F4766A70085E08A /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302411C01F4766A70085E08A /* EventMessage.swift */; };
 		3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045ADE01F43A7CC00E734AC /* EventUser.swift */; };
 		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
 		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302411C01F4766A70085E08A /* EventMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
 		3045ADE01F43A7CC00E734AC /* EventUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUser.swift; sourceTree = "<group>"; };
 		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		30C3C3771F42049E008FAE9A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				FFEEFD6E1F3CF04A002E0C9A /* DataManager.swift */,
 				30C3C3771F42049E008FAE9A /* Event.swift */,
 				3045ADE01F43A7CC00E734AC /* EventUser.swift */,
+				302411C01F4766A70085E08A /* EventMessage.swift */,
 				30C3C3711F4202DB008FAE9A /* R.swift */,
 				FFFAF7E21F436C2D00C75272 /* APIKeys.swift */,
 			);
@@ -334,6 +337,7 @@
 				FFEEFD6A1F3CEE78002E0C9A /* LoginViewController.swift in Sources */,
 				FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */,
 				FFEEFD6F1F3CF04A002E0C9A /* DataManager.swift in Sources */,
+				302411C11F4766A70085E08A /* EventMessage.swift in Sources */,
 				FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */,
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
