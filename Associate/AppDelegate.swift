@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MAThemeKit.customizeNavigationBarColor(UIColor.blue, textColor: UIColor.white, buttonColor: UIColor.white)
         
         
+        Event.registerSubclass()
+        EventUser.registerSubclass()
+        EventMessage.registerSubclass()
+        
         let configuration = ParseClientConfiguration {
             
             $0.applicationId = appID

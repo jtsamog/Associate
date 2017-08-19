@@ -12,19 +12,19 @@ import Parse
 class EventMessage: PFObject {
   
   // MARK: - Properties
-  @NSManaged var title: String?
   @NSManaged var msgText: String?
   @NSManaged var creator: EventUser?
+    @NSManaged var event: Event
   
 
   
   // MARK: - Initializers
-  init(title: String?, msgText: String?, creator: EventUser?) {
+    init(msgText: String?, creator: EventUser?, event: Event) {
     super.init()
-    
-    self.title = title
+
     self.msgText = msgText
     self.creator = creator
+    self.event = event
 
   }
   
