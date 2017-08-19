@@ -77,14 +77,22 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func joinTapped(_ sender: Any) {
         
         let joinedEvent = event
-        
         let member = PFUser.current()
-        
         let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
-        
         relation.add(member!)
         
-        joinedEvent?.saveInBackground()
+        //joinedEvent?.saveInBackground()
+        
+        joinedEvent?.saveInBackground(block: { (success, error) -> Void in
+            if error == nil {
+                
+                self.retrieveUsers()
+                
+            } else {
+                print(error!)
+            }
+        })
+
 
         
     }
@@ -180,6 +188,25 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
                 self.messageTableView.reloadData()
 
             }
+        })
+    }
+    
+    
+    func retrieveUsers() {
+        
+        let joinedEvent = event!
+        let query = PFQuery(className: "Event")
+        query.whereKey("user", equalTo: joinedEvent)
+        
+        query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
+            
+            self.usersArray = [PFUser]()
+            
+            for userObject in objects! {
+                
+                self.usersArray.append(userObject as! PFUser)
+            }
+            print(self.usersArray)
         })
     }
 
