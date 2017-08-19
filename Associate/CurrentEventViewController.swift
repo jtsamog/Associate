@@ -22,7 +22,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var joinImageView: UIImageView!
     @IBOutlet weak var joinButtn: UIButton!
 
-    var event: Event?
+    var event: Event!
     
     //MARK: Harrisons Outlets
     
@@ -42,6 +42,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     var menuShowing = false
     
     var messagesArray:[String] = [String]()
+    var usersArray:[PFUser] = [PFUser]()
     
     
     override func viewDidLoad() {
@@ -76,14 +77,22 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func joinTapped(_ sender: Any) {
         
         let joinedEvent = event
-        
         let member = PFUser.current()
-        
         let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
-        
         relation.add(member!)
         
-        joinedEvent?.saveInBackground()
+        //joinedEvent?.saveInBackground()
+        
+        joinedEvent?.saveInBackground(block: { (success, error) -> Void in
+            if error == nil {
+                
+                self.retrieveUsers()
+                
+            } else {
+                print(error!)
+            }
+        })
+
 
         
     }
@@ -96,12 +105,17 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         self.messageTextField.isEnabled = false
         self.sendButton.isEnabled = false
         
-        let newMessageObject = PFObject(className:"Messages")
-        newMessageObject["Text"] = self.messageTextField.text
-        newMessageObject.saveInBackground(block: { (success, error) -> Void in
+        // Add Message relation to Event
+        let joinedEvent = event!
+        let newMessage = EventMessage(msgText: messageTextField.text, creator: PFUser.current() as? EventUser, event: joinedEvent)
+        
+        newMessage.saveInBackground(block: { (success, error) -> Void in
             if error == nil {
                 self.retrieveMessages()
+                let relation = joinedEvent.relation(forKey: "messageInEvent") as! PFRelation<EventMessage>
+                relation.add(newMessage)
                 print("Saved in server")
+                joinedEvent.saveInBackground()
             } else {
                 print(error!)
             }
@@ -152,7 +166,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     
     func retrieveMessages() {
         
-        let query = PFQuery(className: "Messages")
+        let joinedEvent = event!
+        let query = PFQuery(className: "EventMessage")
+        query.whereKey("event", equalTo: joinedEvent)
         
         query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
             
@@ -160,7 +176,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             
             for messageObject in objects! {
                 
-                let messageText:String? = (messageObject as PFObject)["Text"] as? String
+                let messageText:String? = (messageObject as PFObject)["msgText"] as? String
                 
                 if messageText != nil {
                     self.messagesArray.append(messageText!)
@@ -170,11 +186,27 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             DispatchQueue.main.async {
                 
                 self.messageTableView.reloadData()
-                
+
             }
+        })
+    }
+    
+    
+    func retrieveUsers() {
+        
+        let joinedEvent = event!
+        let query = PFQuery(className: "Event")
+        query.whereKey("user", equalTo: joinedEvent)
+        
+        query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
             
+            self.usersArray = [PFUser]()
             
-            
+            for userObject in objects! {
+                
+                self.usersArray.append(userObject as! PFUser)
+            }
+            print(self.usersArray)
         })
     }
 
