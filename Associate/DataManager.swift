@@ -37,7 +37,14 @@ class DataManager  {
 //    }
 
     
-    static func signup(with userName: String, and password: String, completion: @escaping (Bool, Error?)-> Void) {
+  static func signup(with userName: String,
+                     andPwd password: String,
+                     andFname fullname: String,
+                     andEmail emailAddr: String,
+                     andPhone phone: String,
+                     andProf profession: String,
+                     andPhoto photo: UIImage,
+                     completion: @escaping (Bool, Error?)-> Void) {
         
         //get user current location
         PFGeoPoint.geoPointForCurrentLocation() {(geopoint: PFGeoPoint?, error: Error?) -> Void in
@@ -45,10 +52,15 @@ class DataManager  {
                 print(#line, error)
                 return
             }
-            let user = EventUser(userCurrentLoc:geopoint)
-            
+          let user = EventUser(userCurrentLoc:geopoint)
+          
             user.username = userName
             user.password = password
+            user.fullname = fullname
+            user.emailAddr = emailAddr
+            user.phone = phone
+            user.profession = profession
+            user.photo = photo
             user.signUpInBackground { success, error in
                 completion(success, error)
             }
