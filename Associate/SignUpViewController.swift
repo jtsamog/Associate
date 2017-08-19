@@ -21,6 +21,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var repasswordTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+  
+  
+  //added these 3 outlets
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var professionTextField: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
+
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +41,29 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signupTapped(_ sender: UIButton) {
         
-        guard let username = usernameTextField.text , let password = passwordTextField.text else {
+        guard let username = usernameTextField.text ,
+          let password = passwordTextField.text,
+          let fullname = nameTextField.text,
+          let emailAddr = emailTextField.text,
+          let phone = phoneTextField.text,
+          let profession = professionTextField.text,
+          let photo = profileImageView.image
+      else {
             
             //some error, display alert
             return
         }
         
-        DataManager.signup(with: username, and: password) { (success: Bool, error: Error?) in
+      DataManager.signup(with: username,
+                         andPwd: password,
+                         andFname: fullname,
+                         andEmail: emailAddr,
+                         andPhone: phone,
+                         andProf: profession,
+                         andPhoto: photo
+      ) { (success: Bool, error: Error?) in
             
             guard success == true else {
-                
-                
-                
                 return
             }
             print("User successfully created")
