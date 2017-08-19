@@ -43,6 +43,7 @@ class EventMessage: PFObject {
   //    return query
   //  }
   
+  
 //  override class func query()-> PFQuery<PFObject>? {
 //    guard let userGeoPoint = EventUser.current()?.userCurrentLoc else {
 //      print("User location not available")
