@@ -22,6 +22,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     
     
+    //Editing
+    @IBOutlet weak var editingStack: UIStackView!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var occupationTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    //Display
+    @IBOutlet weak var displayStack: UIStackView!
+    
+    
     var userProfile = EventUser.current()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +60,14 @@ class ProfileViewController: UIViewController {
     
     @IBAction func editTapped(_ sender: Any) {
         
+        editButton.isHidden = true
+        displayStack.isHidden = true
         
-        
+        nameTextField.text = userProfile?.fullname
+        occupationTextField.text = userProfile?.profession
+        emailTextField.text = userProfile?.emailAddr
+        phoneTextField.text = userProfile?.phone
     }
-  
-    
     
 }
 
