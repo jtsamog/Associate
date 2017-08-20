@@ -32,7 +32,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         self.title = "ASSOCIATE"
         
         blurView.isHidden = true
@@ -124,17 +123,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    @IBAction func joinTapped(_ sender: UIButton) {
-        
-        
-        
-    
-        self.performSegue(withIdentifier: "join", sender: nil)
-    
-    }
-    
-    
-    
+       
     
     @IBAction func logoutTapped(_ sender: Any) {
         

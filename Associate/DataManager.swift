@@ -44,6 +44,7 @@ class DataManager  {
                      andPhone phone: String,
                      andProf profession: String,
                      andPhoto photo: UIImage,
+                     andProfilePic profPic: PFFile,
                      completion: @escaping (Bool, Error?)-> Void) {
         
         //get user current location
@@ -52,6 +53,8 @@ class DataManager  {
                 print(#line, error)
                 return
             }
+            
+            
           let user = EventUser(userCurrentLoc:geopoint)
           
             user.username = userName
@@ -61,6 +64,7 @@ class DataManager  {
             user.phone = phone
             user.profession = profession
             user.photo = photo
+            user.profileImage = profPic
             user.signUpInBackground { success, error in
                 completion(success, error)
             }
