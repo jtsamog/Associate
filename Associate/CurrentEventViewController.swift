@@ -27,16 +27,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     //MARK: Harrisons Outlets
     
     @IBOutlet weak var messageTableView: UITableView!
-    
     @IBOutlet weak var messageTextField: UITextField!
-    
     @IBOutlet weak var sendButton: UIButton!
-    
     @IBOutlet weak var dockViewHeightConstaint: NSLayoutConstraint!
-    
-    
-    
-    
     
     //MARK: Properties
     var menuShowing = false
@@ -48,67 +41,43 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
-        
         joinImageView.image = event?.photo
-    
         blurView.isHidden = true
-        
         sideMenu.layer.shadowOpacity = 1
-        
         prettyUI()
         
-        // Chat Start
         self.messageTableView.dataSource = self
         self.messageTableView.delegate = self
-        
         self.messageTextField.delegate = self
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
-        
         self.retrieveMessages()
-        // Chat End
-
     }
     
-    //MARK: Actions 
-    
+    //MARK: Actions
     @IBAction func joinTapped(_ sender: Any) {
         
         let joinedEvent = event
         let member = PFUser.current()
         let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
         relation.add(member!)
-        
-        //joinedEvent?.saveInBackground()
-        
         joinedEvent?.saveInBackground(block: { (success, error) -> Void in
             if error == nil {
-                
                 self.retrieveUsers()
-                
             } else {
                 print(error!)
             }
         })
-
-
-        
     }
     
-    
-    // Chat start
     @IBAction func sendButtonTapped(_ sender: UIButton) {
         
         self.messageTextField.endEditing(true)
         self.messageTextField.isEnabled = false
         self.sendButton.isEnabled = false
         
-        // Add Message relation to Event
         let joinedEvent = event!
         let newMessage = EventMessage(msgText: messageTextField.text, creator: PFUser.current() as? EventUser, event: joinedEvent)
-        
         newMessage.saveInBackground(block: { (success, error) -> Void in
             if error == nil {
                 self.retrieveMessages()
@@ -120,16 +89,12 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
                 print(error!)
             }
         })
-        
         DispatchQueue.main.async {
-            
             self.messageTextField.isEnabled = true
             self.sendButton.isEnabled = true
             self.messageTextField.text = ""
-            
         }
     }
-    // Chat End
   
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         
@@ -137,14 +102,12 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             leadingContraint.constant = -200
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
-                
                 self.blurView.isHidden = true
             })
         } else {
             leadingContraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
-                
                 self.blurView.isHidden = false
             })
         }
@@ -153,71 +116,74 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func leaveEventTapped(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+        let joinedEvent = event
+        let member = PFUser.current()
+        let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
+        relation.remove(member!)
+        joinedEvent?.saveInBackground(block: { (success, error) -> Void in
+            if error == nil {
+                
+                self.dismiss(animated: true, completion: nil)
+                print("User removed")
+                
+            } else {
+                print(error!)
+            }
+        })
     }
     
-    // Chat Start
-    //MARK: Textfield Delegate
-    func tableViewTapped() {
-        
-        self.messageTextField.endEditing(true)
-        
-    }
-    
+    //MARK: Retrievals
     func retrieveMessages() {
         
         let joinedEvent = event!
         let query = PFQuery(className: "EventMessage")
         query.whereKey("event", equalTo: joinedEvent)
-        
         query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
-            
             self.messagesArray = [String]()
-            
             for messageObject in objects! {
-                
                 let messageText:String? = (messageObject as PFObject)["msgText"] as? String
-                
                 if messageText != nil {
                     self.messagesArray.append(messageText!)
                 }
             }
-            
             DispatchQueue.main.async {
-                
                 self.messageTableView.reloadData()
-
             }
         })
     }
     
-    
     func retrieveUsers() {
         
         let joinedEvent = event!
-        let query = PFQuery(className: "Event")
-        query.whereKey("user", equalTo: joinedEvent)
+        let query = PFQuery(className: "User")
+        query.whereKey("event", equalTo: joinedEvent)
+        // NEED TO SET UP RELATIONSHIP IN USERS AND NOT EVENT
         
         query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
             
             self.usersArray = [PFUser]()
             
             for userObject in objects! {
-                
                 self.usersArray.append(userObject as! PFUser)
+                print("Add user")
             }
             print(self.usersArray)
+            //print("here")
         })
     }
 
-
+    //MARK: Textfield Delegate
+    func tableViewTapped() {
+        
+        self.messageTextField.endEditing(true)
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         UIView.animate(withDuration: 0.21, animations: {
             self.dockViewHeightConstaint.constant = 335
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -226,7 +192,6 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             self.dockViewHeightConstaint.constant = 60
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
     }
     
     //MARK: Datasource/Delegate
@@ -235,16 +200,12 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         let cell = self.messageTableView.dequeueReusableCell(withIdentifier: "post", for: indexPath)
         cell.textLabel?.text = self.messagesArray[indexPath.row]
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return messagesArray.count
-        
     }
-
-    // Chat End
 }
 
 //MARK: UICode 
@@ -265,9 +226,7 @@ private extension CurrentEventViewController {
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
-        
     }
-    
 }
 
 
