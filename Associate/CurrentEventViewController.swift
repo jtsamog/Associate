@@ -59,11 +59,13 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         let joinedEvent = event
         let member = PFUser.current()
-        let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
-        relation.add(member!)
-        joinedEvent?.saveInBackground(block: { (success, error) -> Void in
+        
+        let relation:PFRelation = member!.relation(forKey: "eventsJoined")
+        relation.add(joinedEvent!)
+        member!.saveInBackground(block: { (success, error) -> Void in
             if error == nil {
                 self.retrieveUsers()
+                print("User added to event")
             } else {
                 print(error!)
             }
@@ -118,13 +120,14 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         let joinedEvent = event
         let member = PFUser.current()
-        let relation:PFRelation = joinedEvent!.relation(forKey: "membersInEvent")
-        relation.remove(member!)
-        joinedEvent?.saveInBackground(block: { (success, error) -> Void in
+        
+        let relation:PFRelation = member!.relation(forKey: "eventsJoined")
+        relation.remove(joinedEvent!)
+        member?.saveInBackground(block: { (success, error) -> Void in
             if error == nil {
                 
                 self.dismiss(animated: true, completion: nil)
-                print("User removed")
+                print("User removed from event")
                 
             } else {
                 print(error!)
@@ -156,19 +159,21 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         let joinedEvent = event!
         let query = PFQuery(className: "User")
-        query.whereKey("event", equalTo: joinedEvent)
+        query.whereKey("eventsJoined", equalTo: joinedEvent)
+        
+        //print("retrieveUsers")
         // NEED TO SET UP RELATIONSHIP IN USERS AND NOT EVENT
         
         query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
             
+            print("Query complete")
             self.usersArray = [PFUser]()
             
             for userObject in objects! {
                 self.usersArray.append(userObject as! PFUser)
-                print("Add user")
+                print("User added to array")
             }
             print(self.usersArray)
-            //print("here")
         })
     }
 
