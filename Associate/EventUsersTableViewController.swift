@@ -71,6 +71,15 @@ class EventUsersTableViewController: UITableViewController {
         return cell
     }
     
+    
+    //MARK: Actions
+    
+    @IBAction func connectTapped(_ sender: UIButton) {
+        
+        
+    }
+    
+    
 }
 
 

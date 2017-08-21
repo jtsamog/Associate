@@ -752,6 +752,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="connectTapped:" destination="Vhe-nG-Hd8" eventType="touchUpInside" id="139-5f-duu"/>
+                                                <action selector="connectTapped:" destination="oAY-sC-ocN" eventType="touchUpInside" id="XqU-94-PMA"/>
                                             </connections>
                                         </button>
                                     </subviews>
