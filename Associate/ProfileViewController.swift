@@ -62,6 +62,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: Actions
     
+    
+    
+    
     @IBAction func editTapped(_ sender: Any) {
         
         self.title = "Edit Mode"

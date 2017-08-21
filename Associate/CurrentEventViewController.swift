@@ -35,6 +35,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     var menuShowing = false
     
     var messagesArray:[String] = [String]()
+    
+    //MARK: User Array
     var usersArray:[PFUser] = [PFUser]()
     
     
@@ -52,6 +54,20 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
         self.retrieveMessages()
+    }
+    
+    //MARK: PrepareForSegue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "usersInEvent") {
+            
+            let tvc: EventUsersTableViewController = (segue.destination as? EventUsersTableViewController)!
+                
+             tvc.usersInEventArray = usersArray
+            
+           
+        }
     }
     
     //MARK: Actions
