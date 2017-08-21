@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Parse
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     //MARK: Outlets
@@ -54,13 +55,19 @@ class ProfileViewController: UIViewController {
         
         niceUI()
         
-       
+        editingStack.isHidden = true
+        editingImageView.isHidden = true
+        
     }
     
+    //MARK: Actions
     
     @IBAction func editTapped(_ sender: Any) {
         
         self.title = "Edit Mode"
+        
+        editingStack.isHidden = false
+        editingImageView.isHidden = false
         
         editButton.isHidden = true
         displayStack.isHidden = true
@@ -71,18 +78,52 @@ class ProfileViewController: UIViewController {
         occupationTextField.text = userProfile?.profession
         emailTextField.text = userProfile?.emailAddr
         phoneTextField.text = userProfile?.phone
+    }
+    
+    @IBAction func editImageTapped(_ sender: UITapGestureRecognizer) {
         
+        print("Edit Image Tapped")
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let selectedEditPic = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            
+            fatalError("Wasnt able to get new photo")
+        }
+        
+        editingImageView.image = selectedEditPic
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
         
         self.title = "Profile"
         
+        //Hiding Views
         editButton.isHidden = false
         displayStack.isHidden = false
         profilePicImageView.isHidden = false
         
+        editingImageView.isHidden = true
+        editingStack.isHidden = true
+        
+        
+        //Converting image to pffile 
+        guard let uploadPhoto = editingImageView.image, let pictureData = UIImagePNGRepresentation(uploadPhoto), let file = PFFile(name: "newProfilePic", data: pictureData) else {
+            
+            
+            print("Error converting image to data")
+            return
+        }
+        
         //Setting updated values
+        userProfile?.profileImage = file
         userProfile?.photo = editingImageView.image
         userProfile?.fullname = nameTextField.text
         userProfile?.profession = occupationTextField.text
@@ -103,6 +144,7 @@ private extension ProfileViewController {
     
     func setValues() {
         
+        profilePicImageView.image = userProfile?.photo
         profileNameLabel.text = userProfile?.fullname
         profileOccupationLabel.text = userProfile?.profession
         profileEmailLabel.text = userProfile?.emailAddr
@@ -128,6 +170,24 @@ private extension ProfileViewController {
         
         editButton.layer.cornerRadius = 16
         saveButton.layer.cornerRadius = 16
+        
+        editingImageView.layer.cornerRadius = 16
+        editingImageView.layer.borderColor = UIColor.orange.cgColor
+        editingImageView.layer.borderWidth = 5
+        editingImageView.clipsToBounds = true
+        
+        nameTextField.layer.borderWidth = 5
+        nameTextField.layer.borderColor = UIColor.orange.cgColor
+        
+        occupationTextField.layer.borderWidth = 5
+        occupationTextField.layer.borderColor = UIColor.orange.cgColor
+
+        
+        emailTextField.layer.borderWidth = 5
+        emailTextField.layer.borderColor = UIColor.orange.cgColor
+
+        phoneTextField.layer.borderWidth = 5
+        phoneTextField.layer.borderColor = UIColor.orange.cgColor
     }
 
     func getPic() {
