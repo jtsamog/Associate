@@ -22,6 +22,11 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var joinImageView: UIImageView!
     @IBOutlet weak var joinButtn: UIButton!
 
+    @IBOutlet weak var joinLabel: UILabel!
+    
+    @IBOutlet weak var usersInEventBarButton: UIBarButtonItem!
+    
+    
     var event: Event!
     
     //MARK: Harrisons Outlets
@@ -43,6 +48,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usersInEventBarButton.isEnabled = false
+        
+        joinLabel.text = event?.title
         joinImageView.image = event?.photo
         blurView.isHidden = true
         sideMenu.layer.shadowOpacity = 1
@@ -86,6 +94,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
                 print(error!)
             }
         })
+        
+        joinView.isHidden = true
+        usersInEventBarButton.isEnabled = true
     }
     
     @IBAction func sendButtonTapped(_ sender: UIButton) {

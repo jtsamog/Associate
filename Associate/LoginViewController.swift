@@ -13,6 +13,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Outlets
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -42,6 +44,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         self.performSegue(withIdentifier: "login", sender: nil)
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        scrollView.setContentOffset(CGPoint(x:0, y:130), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
