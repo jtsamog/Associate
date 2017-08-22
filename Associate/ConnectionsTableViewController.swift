@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class ConnectionsTableViewController: UITableViewController {
+    
+    
+    var connectionsArray:[PFUser] = [PFUser]()
     
     //MARK: Cell and Id
     //ConnectionsTVC uses connectionCell, id - connection
@@ -39,6 +43,28 @@ class ConnectionsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    
+    func retrieveConnections() {
+        
+        let member = PFUser.current()
+        let relation = member?.relation(forKey: "connections")
+        relation?.query().findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
+            print("Query complete")
+            self.connectionsArray = [PFUser]()
+            for userObject in objects! {
+                self.connectionsArray.append(userObject as! PFUser)
+                print("User added to array")
+            }
+            print(self.connectionsArray)
+        })
+    }
+
+    
+    
+    
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
