@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     //MARK: Outlets
@@ -41,6 +41,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        
+        
         getPic()
         
         setValues()
@@ -53,11 +55,26 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.title = "Profile"
         
+        nameTextField.delegate = self
+        occupationTextField.delegate = self
+        emailTextField.delegate = self
+        phoneTextField.delegate = self
+
+        
         niceUI()
         
         editingStack.isHidden = true
         editingImageView.isHidden = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        nameTextField.resignFirstResponder()
+        occupationTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
+        
+        return true
     }
     
     //MARK: Actions

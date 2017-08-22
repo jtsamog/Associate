@@ -15,6 +15,7 @@ class EventUsersTableViewController: UITableViewController {
     // EventUsersTVC uses userCell, id - user
 
     
+    
     //MARK: Properties
     var usersInEventArray = [PFUser]()
 
@@ -74,10 +75,6 @@ class EventUsersTableViewController: UITableViewController {
     
     //MARK: Actions
     
-    @IBAction func connectTapped(_ sender: UIButton) {
-        
-        
-    }
     
     
 }

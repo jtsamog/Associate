@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Outlets
     
@@ -28,6 +28,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
         prettyUI()
         
         warningAlert.addAction(okAlert)
@@ -38,6 +41,13 @@ class LoginViewController: UIViewController {
             return
         }
         self.performSegue(withIdentifier: "login", sender: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
     }
 
 
