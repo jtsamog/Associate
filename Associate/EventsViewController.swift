@@ -39,6 +39,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         menuView.layer.shadowOpacity = 1
         
         prettyUI()
+        
+       
+
     }
     
     //MARK: TableView Methods
