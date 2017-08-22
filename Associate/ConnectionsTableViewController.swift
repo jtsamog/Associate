@@ -19,11 +19,16 @@ class ConnectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        print("loaded")
     }
 
     //MARK: Datasource/Delegate
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        print("No content")
         return 1
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +36,7 @@ class ConnectionsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "connection", for: indexPath) as! ConnectionTableViewCell
+        let cell:ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "connection", for: indexPath) as! ConnectionTableViewCell
         
         let connection = connectionsArray[indexPath.row]
         cell.userNameLabel.text = connection["fullname"] as? String
@@ -45,16 +50,18 @@ class ConnectionsTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "showDetail", sender: selectedConnection)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if let inConnection = sender as? PFUser {
-            let navVC = segue.destination as? UINavigationController
-            let currentVC = navVC?.viewControllers.first as? ConnectionsTableViewController
-            
-            //currentVC?.connection = inConnection
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if let inConnection = sender as? PFUser {
+//            let navVC = segue.destination as? UINavigationController
+//            let currentVC = navVC?.viewControllers.first as? ConnectionsTableViewController
+//            
+//            //currentVC?.connection = inConnection
+//        }
+//    }
+    
+    
 }
 
 extension ConnectionsTableViewController {

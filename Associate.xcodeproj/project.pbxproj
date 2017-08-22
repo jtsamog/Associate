@@ -13,6 +13,7 @@
 		30C3C3781F42049E008FAE9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3771F42049E008FAE9A /* Event.swift */; };
 		66A58F524420A987399878D0 /* Pods_Associate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */; };
 		FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3879041F421C57002685B8 /* NewEventViewController.swift */; };
+		FF3C30931F4CBB960071C8C9 /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3C30921F4CBB960071C8C9 /* DetailUserViewController.swift */; };
 		FF693CD71F437DDD00255461 /* CurrentEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF693CD61F437DDD00255461 /* CurrentEventViewController.swift */; };
 		FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */; };
 		FF887C421F3B6E6E0095F5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF887C401F3B6E6E0095F5C9 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Associate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Associate/Pods-Associate.release.xcconfig"; sourceTree = "<group>"; };
 		B94B28ECA6A459A73FFC6E6D /* Pods_Associate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Associate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3879041F421C57002685B8 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		FF3C30921F4CBB960071C8C9 /* DetailUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUserViewController.swift; sourceTree = "<group>"; };
 		FF693CD61F437DDD00255461 /* CurrentEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventViewController.swift; sourceTree = "<group>"; };
 		FF887C391F3B6E6E0095F5C9 /* Associate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Associate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF887C3C1F3B6E6E0095F5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */,
 				FF3879041F421C57002685B8 /* NewEventViewController.swift */,
 				FF693CD61F437DDD00255461 /* CurrentEventViewController.swift */,
+				FF3C30921F4CBB960071C8C9 /* DetailUserViewController.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				30C3C3721F4202DB008FAE9A /* R.swift in Sources */,
 				FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */,
 				FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */,
+				FF3C30931F4CBB960071C8C9 /* DetailUserViewController.swift in Sources */,
 				FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
