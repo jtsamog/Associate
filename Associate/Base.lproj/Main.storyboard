@@ -631,6 +631,9 @@
                                                 <state key="normal" title="Profile">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="WA5-fa-7lL" kind="show" id="jN9-aB-hQI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40O-4g-JyP" userLabel="Connections">
                                                 <rect key="frame" x="0.0" y="226" width="150" height="50"/>
@@ -641,6 +644,9 @@
                                                 <state key="normal" title="Connections">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="sTW-Vj-Nsa" kind="show" id="Jtw-DX-t9u"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsk-N3-r9d" userLabel="Logout">
                                                 <rect key="frame" x="0.0" y="339" width="150" height="50"/>
@@ -651,6 +657,9 @@
                                                 <state key="normal" title="Logout">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logoutTapped:" destination="MvU-aL-ZAI" eventType="touchUpInside" id="MPu-hc-XOC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -699,7 +708,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jMs-bc-9eY">
                         <barButtonItem key="backBarButtonItem" title=" " id="UoQ-Fo-79q"/>
-                        <barButtonItem key="leftBarButtonItem" image="Table" id="iqN-yT-RVA">
+                        <barButtonItem key="leftBarButtonItem" image="BackB" id="iqN-yT-RVA">
                             <connections>
                                 <action selector="menuTapped:" destination="MvU-aL-ZAI" id="2XO-Yp-pIL"/>
                             </connections>
@@ -711,6 +720,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backOrMenuBarButton" destination="iqN-yT-RVA" id="wKh-ux-8gC"/>
                         <outlet property="blurView" destination="85P-DD-eQE" id="tPM-Qz-MXb"/>
                         <outlet property="dockViewHeightConstaint" destination="pCn-U8-b2v" id="7ad-01-XTz"/>
                         <outlet property="joinButtn" destination="AdG-2j-OBT" id="BVR-qa-ezR"/>
@@ -727,6 +737,7 @@
                         <outletCollection property="blueButtons" destination="Hrd-mu-fft" collectionClass="NSMutableArray" id="UWB-PL-hiI"/>
                         <outletCollection property="blueButtons" destination="40O-4g-JyP" collectionClass="NSMutableArray" id="bzy-rZ-75y"/>
                         <outletCollection property="blueButtons" destination="dsk-N3-r9d" collectionClass="NSMutableArray" id="fIa-xV-NeB"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutPOP" id="JA5-q0-fpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdG-vh-aVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -853,7 +864,7 @@
                                     <outlet property="userDescripLabel" destination="Zrh-2y-JUl" id="hgI-QL-PZ7"/>
                                     <outlet property="userNameLabel" destination="ybf-Vq-Soo" id="mpL-ZZ-spG"/>
                                     <outlet property="userPicImageView" destination="2GM-cq-3qq" id="PFG-FO-fob"/>
-                                    <segue destination="DXE-1y-ebQ" kind="show" id="yLH-FR-FGd"/>
+                                    <segue destination="DXE-1y-ebQ" kind="show" identifier="showDetail" id="yLH-FR-FGd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -990,7 +1001,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SIk-BO-Mkv">
-                                        <rect key="frame" x="80" y="284" width="160" height="195"/>
+                                        <rect key="frame" x="80" y="284" width="160" height="140"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gP1-bG-RJX">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
@@ -1010,18 +1021,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIb-8Z-aro">
-                                                <rect key="frame" x="0.0" y="165" width="160" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="JfS-Re-Ixm" firstAttribute="centerX" secondItem="SIk-BO-Mkv" secondAttribute="centerX" id="06Y-LH-8xc"/>
                                             <constraint firstItem="gP1-bG-RJX" firstAttribute="centerX" secondItem="SIk-BO-Mkv" secondAttribute="centerX" id="Bsa-52-dtL"/>
                                             <constraint firstItem="QeJ-PA-Uap" firstAttribute="centerX" secondItem="SIk-BO-Mkv" secondAttribute="centerX" id="Pqy-jV-P4d"/>
-                                            <constraint firstItem="iIb-8Z-aro" firstAttribute="centerX" secondItem="SIk-BO-Mkv" secondAttribute="centerX" id="vku-rP-c5u"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lu-a3-Vpc">
@@ -1034,7 +1038,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jG5-ax-y7b">
-                                        <rect key="frame" x="85" y="504" width="150" height="30"/>
+                                        <rect key="frame" x="85" y="494" width="150" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="ap4-zd-34H"/>
@@ -1046,14 +1050,26 @@
                                             <action selector="signupTapped:" destination="o6c-Oi-Wcg" eventType="touchUpInside" id="SRe-WR-Cz2"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlW-f8-N1q">
+                                        <rect key="frame" x="131" y="534" width="58" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Go Back">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBackTapped:" destination="o6c-Oi-Wcg" eventType="touchUpInside" id="jeQ-A1-xfs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="jG5-ax-y7b" firstAttribute="top" secondItem="iIb-8Z-aro" secondAttribute="bottom" constant="25" id="Hoa-1e-vzl"/>
+                                    <constraint firstItem="KlW-f8-N1q" firstAttribute="centerX" secondItem="srY-Z9-9WB" secondAttribute="centerX" id="0k1-lO-1kO"/>
+                                    <constraint firstItem="jG5-ax-y7b" firstAttribute="top" secondItem="SIk-BO-Mkv" secondAttribute="bottom" constant="70" id="Al0-JT-59H"/>
                                     <constraint firstItem="SIk-BO-Mkv" firstAttribute="centerX" secondItem="srY-Z9-9WB" secondAttribute="centerX" id="I1F-p7-irJ"/>
                                     <constraint firstItem="7lu-a3-Vpc" firstAttribute="centerX" secondItem="srY-Z9-9WB" secondAttribute="centerX" id="XiG-P5-End"/>
                                     <constraint firstItem="SIk-BO-Mkv" firstAttribute="leading" secondItem="srY-Z9-9WB" secondAttribute="leading" constant="80" id="Xqu-Df-zXq"/>
                                     <constraint firstItem="jG5-ax-y7b" firstAttribute="centerX" secondItem="srY-Z9-9WB" secondAttribute="centerX" id="adx-i0-dOI"/>
+                                    <constraint firstItem="jG5-ax-y7b" firstAttribute="top" secondItem="KlW-f8-N1q" secondAttribute="bottom" constant="-70" id="hkt-Oj-EiW"/>
                                     <constraint firstItem="7lu-a3-Vpc" firstAttribute="top" secondItem="srY-Z9-9WB" secondAttribute="top" constant="25" id="nKL-9A-Upo"/>
                                     <constraint firstItem="YEK-0h-JCe" firstAttribute="centerX" secondItem="srY-Z9-9WB" secondAttribute="centerX" id="nw5-Pa-Rhu"/>
                                     <constraint firstAttribute="width" constant="320" id="oJu-Jn-V5h"/>
@@ -1330,6 +1346,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackB" width="16" height="24"/>
         <image name="Combined Shape" width="50" height="50"/>
         <image name="Event Header" width="327" height="23"/>
         <image name="Logo" width="272" height="302"/>
@@ -1339,6 +1356,9 @@
         <image name="noPhotoSelected" width="617" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="huF-Vq-d3s"/>
         <segue reference="9JE-Zl-ZnN"/>
+        <segue reference="cCY-BN-Cvr"/>
+        <segue reference="QsS-9f-Urf"/>
     </inferredMetricsTieBreakers>
 </document>

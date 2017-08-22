@@ -25,7 +25,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var joinLabel: UILabel!
     
     @IBOutlet weak var usersInEventBarButton: UIBarButtonItem!
-    
+    @IBOutlet weak var backOrMenuBarButton: UIBarButtonItem!
     
     var event: Event!
     
@@ -40,6 +40,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     var menuShowing = false
     
     var messagesArray:[String] = [String]()
+    
+    var joined = false
     
     //MARK: User Array
     var usersArray:[PFUser] = [PFUser]()
@@ -79,6 +81,18 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     //MARK: Actions
+    
+    @IBAction func logoutTapped(_ sender: UIButton) {
+        
+        PFUser.logOut()
+        
+        _ = PFUser.current()
+        
+        self.performSegue(withIdentifier: "logoutPOP", sender: nil)
+    }
+    
+    
+    
     @IBAction func joinTapped(_ sender: Any) {
         
         let joinedEvent = event
@@ -97,6 +111,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         joinView.isHidden = true
         usersInEventBarButton.isEnabled = true
+        joined = true
+        backOrMenuBarButton.image = UIImage(named: "Table")
+        
     }
     
     @IBAction func sendButtonTapped(_ sender: UIButton) {
@@ -127,6 +144,13 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
   
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         
+        
+        if (joined == false) {
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        } else {
+        
         if(menuShowing) {
             leadingContraint.constant = -200
             UIView.animate(withDuration: 0.3, animations: {
@@ -141,6 +165,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             })
         }
         menuShowing = !menuShowing
+    }
+        
     }
     
     @IBAction func leaveEventTapped(_ sender: UIButton) {

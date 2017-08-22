@@ -64,6 +64,24 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         profilePageShowing = !profilePageShowing
     }
     
+    @IBAction func goBackTapped(_ sender: UIButton) {
+        
+        if (profilePageShowing) {
+            trailingConstraint.constant = -400
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            trailingConstraint.constant = -16
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        
+        profilePageShowing = !profilePageShowing
+}
+
+    
     @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
         
         print("Profile Pic Tapped")
