@@ -70,6 +70,8 @@ class EventUsersTableViewController: UITableViewController {
             }
         }
         
+        cell.connectImageView.image = UIImage(named: "Unchecked")
+        
         return cell
     }
     
@@ -87,15 +89,10 @@ class EventUsersTableViewController: UITableViewController {
                 print(error!)
             }
         })
-
         
-        
-        
-        
-        
+        let cell = tableView.cellForRow(at: indexPath) as! UserTableViewCell
+        cell.connectImageView.image = UIImage(named: "Checked")
     }
-    
-    
     
 }
 
