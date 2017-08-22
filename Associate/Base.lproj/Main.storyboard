@@ -943,6 +943,13 @@
                             <constraint firstItem="xcj-8r-rFP" firstAttribute="centerX" secondItem="ZVJ-wG-vP0" secondAttribute="centerX" id="lTS-9M-cOX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailEmailLabel" destination="NhW-Kt-uSa" id="hCQ-IO-Wdd"/>
+                        <outlet property="detailFullName" destination="7Y5-C5-ckJ" id="oIb-NR-zP1"/>
+                        <outlet property="detailImageView" destination="xcj-8r-rFP" id="p6O-zq-vMk"/>
+                        <outlet property="detailOccupationLabel" destination="ZFF-Vp-1FE" id="58G-wx-iWn"/>
+                        <outlet property="detailPhoneLabel" destination="Itt-Vc-hZc" id="ilr-nr-W1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MY1-wl-Uef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

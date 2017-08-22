@@ -9,6 +9,14 @@
 import UIKit
 
 class DetailUserViewController: UIViewController {
+    
+    //MARK: Outlets 
+    
+    @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var detailFullName: UILabel!
+    @IBOutlet weak var detailOccupationLabel: UILabel!
+    @IBOutlet weak var detailPhoneLabel: UILabel!
+    @IBOutlet weak var detailEmailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
