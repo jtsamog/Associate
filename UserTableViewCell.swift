@@ -34,9 +34,7 @@ class UserTableViewCell: UITableViewCell {
     
     @IBAction func connectTapped(_ sender: UIButton) {
         
-        
-        //connectImageView.image = UIImage(named: "Checked")
-        //print("image change")
+     
         
         
     }

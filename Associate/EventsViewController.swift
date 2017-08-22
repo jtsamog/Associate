@@ -28,6 +28,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var eventsArray = [Event]()
     var menuShowing = false
+    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +43,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         prettyUI()
         
-       
-
+        //Refresh Control
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
+        eventTableView.addSubview(refreshControl)
     }
     
     //MARK: TableView Methods
@@ -154,14 +159,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //MARK: Lifecycle
 
 extension EventsViewController {
-    
     override func viewWillAppear(_ animated: Bool) {
-        
-        //Reload wall
-        
-        getEvents()
+        if (eventsArray.isEmpty) {
+            activityIndicator.startAnimating()
+            getEvents()
+        }
     }
     
+    func refreshPull() {
+        activityIndicator.startAnimating()
+        getEvents()
+    }
 }
 
 
@@ -226,6 +234,8 @@ private extension EventsViewController {
                     self.eventsArray[index].photo = UIImage(data: data)
                     //          DispatchQueue.main.async {
                     self.eventTableView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.refreshControl.endRefreshing()
                     //          }
                 }
             }

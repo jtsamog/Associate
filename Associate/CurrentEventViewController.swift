@@ -46,6 +46,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     //MARK: User Array
     var usersArray:[PFUser] = [PFUser]()
     
+    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +69,23 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
         self.retrieveMessages()
+        
+        //Refresh Control
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
+        messageTableView.addSubview(refreshControl)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (messagesArray.isEmpty) {
+            activityIndicator.startAnimating()
+            retrieveMessages()
+        }
+    }
+    
+    func refreshPull() {
+        activityIndicator.startAnimating()
+        retrieveMessages()
     }
     
     //MARK: PrepareForSegue
@@ -206,6 +226,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             }
             DispatchQueue.main.async {
                 self.messageTableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                self.refreshControl.endRefreshing()
             }
         })
     }
