@@ -50,6 +50,11 @@ class EventUsersTableViewController: UITableViewController {
         
         cell.userNameLabel.text = user["fullname"] as? String
         cell.userDescriptonLabel.text = user["profession"] as? String
+        
+        // THIS SECTION NEED TO CHECK IF WORKS
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(connectTapped(_:)), for: .touchUpInside)
+        // *****************
        
         if let imageFile = user["profileImage"] as? PFFile {
             imageFile.getDataInBackground { data, error in
@@ -75,6 +80,17 @@ class EventUsersTableViewController: UITableViewController {
     //MARK: Actions
     
     @IBAction func connectTapped(_ sender: UIButton) {
+        
+        if (sender.tag == 0) {
+            
+            // stick code in here
+            
+        }
+        
+        
+        
+        
+        
         
         
     }
