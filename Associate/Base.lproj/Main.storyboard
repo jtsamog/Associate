@@ -764,6 +764,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="connectImageView" destination="pds-Mr-SYE" id="rnU-mh-Wou"/>
                                     <outlet property="userDescriptonLabel" destination="PJG-F1-kYB" id="cuh-Vb-t2m"/>
                                     <outlet property="userNameLabel" destination="2yx-ny-PBi" id="RLq-2n-PdQ"/>
                                     <outlet property="userPicImageView" destination="eit-Rz-mtq" id="vf8-RH-fAG"/>

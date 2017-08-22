@@ -16,6 +16,7 @@ class EventUsersTableViewController: UITableViewController {
 
     
     
+    
     //MARK: Properties
     var usersInEventArray = [PFUser]()
 
