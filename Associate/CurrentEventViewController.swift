@@ -52,6 +52,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         usersInEventBarButton.isEnabled = false
         
+        self.title = event?.title
+        
         joinLabel.text = event?.title
         joinImageView.image = event?.photo
         blurView.isHidden = true

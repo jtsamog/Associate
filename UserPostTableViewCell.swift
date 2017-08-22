@@ -12,7 +12,10 @@ class UserPostTableViewCell: UITableViewCell {
     
     //MARK: Outlets
     
-       
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postNameLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

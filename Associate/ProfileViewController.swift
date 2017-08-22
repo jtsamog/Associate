@@ -35,13 +35,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     //Display
     @IBOutlet weak var displayStack: UIStackView!
     
+    //Barbutton
+    @IBOutlet weak var editSaveButton: UIBarButtonItem!
+    
+    var editingProfile = false
+    
+   // var editProfile = false
+    
     
     var userProfile = EventUser.current()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        
+    
         
         getPic()
         
@@ -80,25 +87,74 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: Actions
     
     
+    @IBAction func editSaveTapped(_ sender: Any) {
+        
+       
+        if (editSaveButton.title == "Edit") {
+        
+        
+            print("Editing")
+            editSaveButton.title = "Save"
+            
+            self.title = "Edit Mode"
+            
+            editingStack.isHidden = false
+            editingImageView.isHidden = false
+            
+            editButton.isHidden = true
+            displayStack.isHidden = true
+            profilePicImageView.isHidden = true
+            
+            editingImageView.image = userProfile?.photo
+            nameTextField.text = userProfile?.fullname
+            occupationTextField.text = userProfile?.profession
+            emailTextField.text = userProfile?.emailAddr
+            phoneTextField.text = userProfile?.phone
+        
+            
+        } else {
     
+            print("Not Editing")
+            
+            editSaveButton.title = "Edit"
+            
+            self.title = "Profile"
+            
+            
+            //Hiding Views
+            editButton.isHidden = false
+            displayStack.isHidden = false
+            profilePicImageView.isHidden = false
+            
+            editingImageView.isHidden = true
+            editingStack.isHidden = true
+            
+            
+            //Converting image to pffile
+            guard let uploadPhoto = editingImageView.image, let pictureData = UIImagePNGRepresentation(uploadPhoto), let file = PFFile(name: "newProfilePic", data: pictureData) else {
+                
+                
+                print("Error converting image to data")
+                return
+            }
+            
+            //Setting updated values
+            userProfile?.profileImage = file
+            userProfile?.photo = editingImageView.image
+            userProfile?.fullname = nameTextField.text
+            userProfile?.profession = occupationTextField.text
+            userProfile?.emailAddr = emailTextField.text
+            userProfile?.phone = phoneTextField.text
+            
+            userProfile?.saveInBackground()
+            
+            setValues()
+
     
-    @IBAction func editTapped(_ sender: Any) {
-        
-        self.title = "Edit Mode"
-        
-        editingStack.isHidden = false
-        editingImageView.isHidden = false
-        
-        editButton.isHidden = true
-        displayStack.isHidden = true
-        profilePicImageView.isHidden = true
-        
-        editingImageView.image = userProfile?.photo
-        nameTextField.text = userProfile?.fullname
-        occupationTextField.text = userProfile?.profession
-        emailTextField.text = userProfile?.emailAddr
-        phoneTextField.text = userProfile?.phone
     }
+    
+
+}
     
     @IBAction func editImageTapped(_ sender: UITapGestureRecognizer) {
         
@@ -120,42 +176,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         editingImageView.image = selectedEditPic
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func saveTapped(_ sender: UIButton) {
-        
-        self.title = "Profile"
-        
-        //Hiding Views
-        editButton.isHidden = false
-        displayStack.isHidden = false
-        profilePicImageView.isHidden = false
-        
-        editingImageView.isHidden = true
-        editingStack.isHidden = true
-        
-        
-        //Converting image to pffile 
-        guard let uploadPhoto = editingImageView.image, let pictureData = UIImagePNGRepresentation(uploadPhoto), let file = PFFile(name: "newProfilePic", data: pictureData) else {
-            
-            
-            print("Error converting image to data")
-            return
-        }
-        
-        //Setting updated values
-        userProfile?.profileImage = file
-        userProfile?.photo = editingImageView.image
-        userProfile?.fullname = nameTextField.text
-        userProfile?.profession = occupationTextField.text
-        userProfile?.emailAddr = emailTextField.text
-        userProfile?.phone = phoneTextField.text
-        
-        userProfile?.saveInBackground()
-        
-        setValues()
-        
-    }
+
 }
+
 
 //MARK: Picture Pull
 
@@ -188,9 +211,7 @@ private extension ProfileViewController {
         profileEmailLabel.layer.cornerRadius = 16
         profileEmailLabel.clipsToBounds = true
         
-        editButton.layer.cornerRadius = 16
-        saveButton.layer.cornerRadius = 16
-        
+              
         editingImageView.layer.cornerRadius = 16
         editingImageView.layer.borderColor = UIColor.orange.cgColor
         editingImageView.layer.borderWidth = 5
