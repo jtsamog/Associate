@@ -73,8 +73,27 @@ class EventUsersTableViewController: UITableViewController {
         return cell
     }
     
-    
-    //MARK: Actions
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let member = PFUser.current()
+        let connection = usersInEventArray[ (indexPath as NSIndexPath).row ]
+        
+        let relation:PFRelation = member!.relation(forKey: "connections")
+        relation.add(connection)
+        member!.saveInBackground(block: { (success, error) -> Void in
+            if error == nil {
+                print("Connection added to user")
+            } else {
+                print(error!)
+            }
+        })
+
+        
+        
+        
+        
+        
+    }
     
     
     
