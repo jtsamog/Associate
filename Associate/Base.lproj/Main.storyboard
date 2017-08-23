@@ -310,23 +310,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8r-6V-lUO">
-                                                    <rect key="frame" x="12" y="37.5" width="100" height="100"/>
+                                                    <rect key="frame" x="12" y="15.5" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="4Yz-CD-QMO"/>
                                                         <constraint firstAttribute="width" constant="100" id="mOB-34-8QR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQd-pw-WBD">
-                                                    <rect key="frame" x="132" y="35" width="130" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQd-pw-WBD">
+                                                    <rect key="frame" x="132" y="14" width="180" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="lva-8b-Fcb"/>
+                                                        <constraint firstAttribute="width" constant="180" id="lva-8b-Fcb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGG-pi-ktf">
+                                                    <rect key="frame" x="132" y="50" width="180" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="9hy-47-Dhn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-54-i85">
-                                                    <rect key="frame" x="132" y="68" width="170" height="80"/>
+                                                    <rect key="frame" x="132" y="86" width="170" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="170" id="mjP-MP-r8X"/>
                                                         <constraint firstAttribute="height" constant="80" id="zhe-TV-s4I"/>
@@ -337,15 +346,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="tGG-pi-ktf" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="15" id="25h-XW-bj7"/>
                                                 <constraint firstItem="gJB-54-i85" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="BUP-pv-7uB"/>
-                                                <constraint firstItem="PQd-pw-WBD" firstAttribute="top" secondItem="E8G-1c-KqI" secondAttribute="top" constant="35" id="LYV-kG-yuM"/>
+                                                <constraint firstItem="gJB-54-i85" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="15" id="Bet-vd-lC0"/>
+                                                <constraint firstItem="PQd-pw-WBD" firstAttribute="top" secondItem="E8G-1c-KqI" secondAttribute="top" constant="14" id="LYV-kG-yuM"/>
                                                 <constraint firstItem="f8r-6V-lUO" firstAttribute="leading" secondItem="E8G-1c-KqI" secondAttribute="leading" constant="12" id="MNx-9O-MMa"/>
                                                 <constraint firstItem="PQd-pw-WBD" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="NFo-Qm-oBA"/>
-                                                <constraint firstItem="f8r-6V-lUO" firstAttribute="centerY" secondItem="E8G-1c-KqI" secondAttribute="centerY" id="TYl-cj-Epw"/>
-                                                <constraint firstItem="gJB-54-i85" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="12" id="bR4-7U-W0x"/>
+                                                <constraint firstItem="f8r-6V-lUO" firstAttribute="centerY" secondItem="E8G-1c-KqI" secondAttribute="centerY" multiplier="0.75" id="TYl-cj-Epw"/>
+                                                <constraint firstItem="tGG-pi-ktf" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="bMs-oG-6OK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="eventAddressLabel" destination="tGG-pi-ktf" id="lRf-do-dpO"/>
                                             <outlet property="eventDetailsLabel" destination="gJB-54-i85" id="GeZ-fY-zXY"/>
                                             <outlet property="eventImageView" destination="f8r-6V-lUO" id="gn5-Vt-acQ"/>
                                             <outlet property="eventNameLabel" destination="PQd-pw-WBD" id="Dad-zg-kpk"/>
@@ -1457,9 +1469,9 @@
         <image name="noPhotoSelected" width="617" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JA5-q0-fpF"/>
+        <segue reference="huF-Vq-d3s"/>
         <segue reference="9JE-Zl-ZnN"/>
-        <segue reference="jN9-aB-hQI"/>
-        <segue reference="Jtw-DX-t9u"/>
+        <segue reference="cCY-BN-Cvr"/>
+        <segue reference="QsS-9f-Urf"/>
     </inferredMetricsTieBreakers>
 </document>
