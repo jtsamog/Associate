@@ -145,7 +145,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func newEventTapped(_ sender: UITapGestureRecognizer) {
         
-        UIView.animate(withDuration: 0.3, animations: { self.newEventView.backgroundColor = UIColor.blue }, completion: { ( value :Bool) in
+        UIView.animate(withDuration: 0.3, animations: { self.newEventView.backgroundColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0) }, completion: { ( value :Bool) in
             
             self.newEventView.backgroundColor = UIColor.white
         })
@@ -186,7 +186,7 @@ private extension EventsViewController {
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
-        newEventView.layer.borderColor = UIColor.blue.cgColor
+        newEventView.layer.borderColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0).cgColor
         newEventView.layer.borderWidth = 3
         newEventView.layer.cornerRadius = 14
     }

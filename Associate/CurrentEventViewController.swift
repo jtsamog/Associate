@@ -277,6 +277,10 @@ private extension CurrentEventViewController {
         leaveEventButton.layer.borderColor = UIColor.white.cgColor
         leaveEventButton.layer.borderWidth = 3
         leaveEventButton.layer.cornerRadius = 10
+        
+        joinButtn.layer.cornerRadius = 4
+        sendButton.layer.cornerRadius = 4 
+        
         for button in blueButtons {
             button.layer.backgroundColor = UIColor.blue.cgColor
             button.layer.borderColor = UIColor.white.cgColor

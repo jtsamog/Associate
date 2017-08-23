@@ -30,12 +30,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
-        
-        usernameTextField.autocorrectionType = .no
-        passwordTextField.autocorrectionType = .no
         prettyUI()
+        
+        textFieldSetUp()
         
         warningAlert.addAction(okAlert)
         
@@ -97,14 +94,19 @@ private extension LoginViewController {
     
     func prettyUI() {
         
-        
         for b in buttons {
             
             b.layer.cornerRadius = 4
             
         }
+    }
+    
+    func textFieldSetUp() {
         
-//        usernameTextField.layer.cornerRadius = 16
-//        passwordTextField.layer.cornerRadius = 16
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        usernameTextField.autocorrectionType = .no
+        passwordTextField.autocorrectionType = .no
     }
 }
