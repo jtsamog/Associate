@@ -200,7 +200,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             DispatchQueue.main.async {
                 self.messageTableView.reloadData()
                 let offset = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height);
-                self.messageTableView.contentOffset = offset;
+                self.messageTableView.contentOffset = offset
+                self.messageTableView.separatorStyle = .none
                 self.activityIndicator.stopAnimating()
                 self.refreshControl.endRefreshing()
             }
