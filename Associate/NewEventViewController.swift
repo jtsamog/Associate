@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NewEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //MARK: Outlets
 
@@ -17,6 +17,11 @@ class NewEventViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var eventTitleTextField: UITextField!
     @IBOutlet weak var eventDescriptionTextField: UITextField!
     @IBOutlet weak var eventAddressTextField: UITextField!
+    
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    
 
   
     //MARK: Properties
@@ -27,10 +32,25 @@ class NewEventViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        prettyUI()
+        
+        eventTitleTextField.delegate = self
+        eventDescriptionTextField.delegate = self
+        eventAddressTextField.delegate = self
     }
     
     //MARK: UIImagePicker
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        eventAddressTextField.resignFirstResponder()
+        eventDescriptionTextField.resignFirstResponder()
+        eventTitleTextField.resignFirstResponder()
+        return true
+    }
+    
+    
     @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
         
         print("Tapped")
@@ -118,6 +138,14 @@ private extension NewEventViewController {
             }
             
         }
+    }
+    
+    
+    func prettyUI() {
+        
+        addButton.layer.cornerRadius = 4
+        cancelButton.layer.cornerRadius = 4
+        
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     //MARK: Outlets
@@ -42,9 +42,30 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.delegate = self
+        nameTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        repasswordTextField.delegate = self
+        phoneTextField.delegate = self
+        professionTextField.delegate = self
+
+        
        prettyUI()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        emailTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        repasswordTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
+        professionTextField.resignFirstResponder()
+        return true
     }
     
     //MARK: Actions 
