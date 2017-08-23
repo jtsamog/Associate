@@ -33,7 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
-        prettyUI()
+//        prettyUI()
         
         warningAlert.addAction(okAlert)
         
@@ -91,18 +91,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 //MARK: UI
 
-private extension LoginViewController {
-    
-    func prettyUI() {
-        
-        
-        for b in buttons {
-            
-            b.layer.cornerRadius = 16
-            
-        }
-        
-        usernameTextField.layer.cornerRadius = 16
-        passwordTextField.layer.cornerRadius = 16
-    }
-}
+//private extension LoginViewController {
+//    
+//    func prettyUI() {
+//        
+//        
+//        for b in buttons {
+//            
+//            b.layer.cornerRadius = 16
+//            
+//        }
+//        
+//        usernameTextField.layer.cornerRadius = 16
+//        passwordTextField.layer.cornerRadius = 16
+//    }
+//}

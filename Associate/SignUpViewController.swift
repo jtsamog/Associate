@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prettyUI()
+       // prettyUI()
 
         // Do any additional setup after loading the view.
     }
@@ -155,18 +155,18 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
 
 //MARK: UI
 
-private extension SignUpViewController {
-    
-    func prettyUI() {
-        
-        emailTextField.layer.cornerRadius = 16
-        nameTextField.layer.cornerRadius = 16
-        usernameTextField.layer.cornerRadius = 16
-        passwordTextField.layer.cornerRadius = 16
-        repasswordTextField.layer.cornerRadius = 16
-        signupButton.layer.cornerRadius = 16
-        cancelButton.layer.cornerRadius = 16
-    }
-    
-    
-}
+//private extension SignUpViewController {
+//    
+//    func prettyUI() {
+//        
+//        emailTextField.layer.cornerRadius = 16
+//        nameTextField.layer.cornerRadius = 16
+//        usernameTextField.layer.cornerRadius = 16
+//        passwordTextField.layer.cornerRadius = 16
+//        repasswordTextField.layer.cornerRadius = 16
+//        signupButton.layer.cornerRadius = 16
+//        cancelButton.layer.cornerRadius = 16
+//    }
+//    
+//    
+//}
