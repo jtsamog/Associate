@@ -76,8 +76,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.eventNameLabel.text = event["title"] as? String
         cell.eventDetailsLabel.text = event["eventDescription"] as? String
         cell.eventImageView.image = event.photo
+        cell.eventAddressLabel.text = event.address 
         
-       // cellUI(cell: cell)
+        cellUI(cell: cell)
         return cell
         
     }
@@ -191,11 +192,14 @@ private extension EventsViewController {
         newEventView.layer.cornerRadius = 14
     }
     
-//    func cellUI(cell: EventTableViewCell) {
-//        
-//        
-//        cell.eventJoinButton.layer.cornerRadius = 14
-//    }
+    func cellUI(cell: EventTableViewCell) {
+        
+        cell.eventImageView.layer.cornerRadius = 4
+        cell.eventImageView.clipsToBounds = true
+        cell.eventNameLabel.layer.cornerRadius = 4
+        cell.eventNameLabel.layer.borderColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0).cgColor
+        cell.eventNameLabel.layer.borderWidth = 2
+    }
     
     
 //    func userJoined() -> PFRelation<EventUser> {
