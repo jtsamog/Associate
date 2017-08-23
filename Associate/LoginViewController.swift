@@ -33,6 +33,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
+        usernameTextField.autocorrectionType = .no
+        passwordTextField.autocorrectionType = .no
         prettyUI()
         
         warningAlert.addAction(okAlert)
@@ -98,11 +100,11 @@ private extension LoginViewController {
         
         for b in buttons {
             
-            b.layer.cornerRadius = 16
+            b.layer.cornerRadius = 4
             
         }
         
-        usernameTextField.layer.cornerRadius = 16
-        passwordTextField.layer.cornerRadius = 16
+//        usernameTextField.layer.cornerRadius = 16
+//        passwordTextField.layer.cornerRadius = 16
     }
 }

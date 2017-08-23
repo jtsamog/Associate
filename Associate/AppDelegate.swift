@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import MAThemeKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MAThemeKit.customizeNavigationBarColor(UIColor.blue, textColor: UIColor.white, buttonColor: UIColor.white)
         
+
+        IQKeyboardManager.sharedManager().enable = true
         
         Event.registerSubclass()
         EventUser.registerSubclass()

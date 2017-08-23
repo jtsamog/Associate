@@ -9,5 +9,8 @@ target 'Associate' do
 
     	pod 'Parse'
 	pod 'MAThemeKit', '~> 1.0'
+	pod 'IQKeyboardManagerSwift', '4.0.10'
+
+
 
 end

@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cancelButton: UIButton!
   
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
     
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
@@ -40,7 +42,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prettyUI()
+       prettyUI()
 
         // Do any additional setup after loading the view.
     }
@@ -159,13 +161,15 @@ private extension SignUpViewController {
     
     func prettyUI() {
         
-        emailTextField.layer.cornerRadius = 16
-        nameTextField.layer.cornerRadius = 16
-        usernameTextField.layer.cornerRadius = 16
-        passwordTextField.layer.cornerRadius = 16
-        repasswordTextField.layer.cornerRadius = 16
-        signupButton.layer.cornerRadius = 16
-        cancelButton.layer.cornerRadius = 16
+//        emailTextField.layer.cornerRadius = 16
+//        nameTextField.layer.cornerRadius = 16
+//        usernameTextField.layer.cornerRadius = 16
+//        passwordTextField.layer.cornerRadius = 16
+//        repasswordTextField.layer.cornerRadius = 16
+        backButton.layer.cornerRadius = 4
+        nextButton.layer.cornerRadius = 4
+        signupButton.layer.cornerRadius = 4
+        cancelButton.layer.cornerRadius = 4
     }
     
     
