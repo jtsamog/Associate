@@ -56,7 +56,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         
         self.title = event?.title
         
-        joinLabel.text = event?.title
+        //joinLabel.text = event?.title
         joinImageView.image = event?.photo
         blurView.isHidden = true
         sideMenu.layer.shadowOpacity = 1
@@ -199,7 +199,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             }
             DispatchQueue.main.async {
                 self.messageTableView.reloadData()
-                let offset = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height);
+                let offset = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height)
                 self.messageTableView.contentOffset = offset
                 self.messageTableView.separatorStyle = .none
                 self.activityIndicator.stopAnimating()
@@ -245,6 +245,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     //MARK: Datasource/Delegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserPostTableViewCell = messageTableView.dequeueReusableCell(withIdentifier: "post", for: indexPath) as! UserPostTableViewCell
+        cellUI(cell: cell)
+        
         let message = self.messagesObjArray[indexPath.row]
         debugPrint(message)
         let creator = message["creator"] as! PFUser
@@ -269,6 +271,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messagesObjArray.count
     }
+    
 }
 
 //MARK: UICode
@@ -288,6 +291,19 @@ private extension CurrentEventViewController {
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
+    }
+    
+    func cellUI(cell: UserPostTableViewCell) {
+        
+        cell.borderView.layer.borderWidth = 2
+        cell.borderView.layer.borderColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0).cgColor
+        cell.borderView.layer.cornerRadius = 20
+
+        cell.postImageView.layer.cornerRadius = 20
+        cell.postImageView.layer.borderColor = UIColor.black.cgColor
+        cell.postImageView.layer.borderWidth = 1
+        cell.postImageView.clipsToBounds = true
+        
     }
 }
 

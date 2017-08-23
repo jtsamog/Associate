@@ -188,7 +188,7 @@ private extension ProfileViewController {
     func  niceUI() {
         
         profilePicImageView.layer.borderWidth = 2
-        profilePicImageView.layer.cornerRadius = 4
+        profilePicImageView.layer.cornerRadius = 100
         profilePicImageView.layer.borderColor = UIColor.lightGray.cgColor
         profilePicImageView.clipsToBounds = true
         

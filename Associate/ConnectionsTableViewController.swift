@@ -28,6 +28,8 @@ class ConnectionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "connection", for: indexPath) as! ConnectionTableViewCell
+        
+        cellUI(cell: cell)
         let connection = connectionsArray[indexPath.row]
         cell.userNameLabel.text = connection["fullname"] as? String
         cell.userDescripLabel.text = connection["profession"] as? String
@@ -60,6 +62,7 @@ extension ConnectionsTableViewController {
 }
 
 private extension ConnectionsTableViewController {
+    
     func retrieveConnections() {
         let member = PFUser.current()
         let relation = member?.relation(forKey: "connections")
@@ -72,5 +75,15 @@ private extension ConnectionsTableViewController {
                 self.tableView.reloadData()
             }
         })
+    }
+    
+    func cellUI(cell: ConnectionTableViewCell) {
+        
+        cell.userPicImageView.layer.cornerRadius = 35
+        cell.userPicImageView.layer.borderColor = UIColor.black.cgColor
+        cell.userPicImageView.layer.borderWidth = 1
+        cell.userPicImageView.clipsToBounds = true
+        
+        
     }
 }

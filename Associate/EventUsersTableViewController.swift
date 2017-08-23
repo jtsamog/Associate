@@ -47,6 +47,8 @@ class EventUsersTableViewController: UITableViewController {
         
         
         let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "user", for: indexPath) as! UserTableViewCell
+        
+        cellUI(cell: cell)
 
         let user = usersInEventArray[indexPath.row]
         
@@ -99,6 +101,21 @@ class EventUsersTableViewController: UITableViewController {
 
 //MARK: Extensions 
 
+private extension EventUsersTableViewController {
+    
+    func cellUI(cell: UserTableViewCell) {
+        
+        cell.userPicImageView.clipsToBounds = true
+        cell.userPicImageView.layer.cornerRadius = 32
+        cell.userPicImageView.layer.borderWidth = 1
+        cell.userPicImageView.layer.borderColor = UIColor.black.cgColor
+        
+        
+        
+    }
+    
+    
+}
 
 
 
