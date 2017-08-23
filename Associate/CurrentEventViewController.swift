@@ -38,10 +38,6 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     
     //MARK: Properties
     var menuShowing = false
-    
-    var messagesArray:[String] = [String]()
-    var creatorsArray:[PFUser] = [PFUser]()
-    
     var messagesObjArray:[PFObject] = [PFObject]()
     
     var joined = false
@@ -77,10 +73,10 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
         messageTableView.addSubview(refreshControl)
-    }
+     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (messagesArray.isEmpty) {
+        if (messagesObjArray.isEmpty) {
             activityIndicator.startAnimating()
             retrieveMessages()
         }
@@ -100,7 +96,6 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     //MARK: Actions
-    
     @IBAction func logoutTapped(_ sender: UIButton) {
         PFUser.logOut()
         _ = PFUser.current()
@@ -204,6 +199,8 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
             }
             DispatchQueue.main.async {
                 self.messageTableView.reloadData()
+                let offset = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height);
+                self.messageTableView.contentOffset = offset;
                 self.activityIndicator.stopAnimating()
                 self.refreshControl.endRefreshing()
             }
@@ -211,7 +208,6 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func retrieveUsers() {
-        
         let joinedEvent = event!
         let relation = joinedEvent.relation(forKey: "membersInEvent")
         relation.query().findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) -> Void in
