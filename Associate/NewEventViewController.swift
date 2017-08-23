@@ -35,9 +35,7 @@ class NewEventViewController: UIViewController, UIImagePickerControllerDelegate,
         
         prettyUI()
         
-        eventTitleTextField.delegate = self
-        eventDescriptionTextField.delegate = self
-        eventAddressTextField.delegate = self
+        textFieldSetUp()
     }
     
     //MARK: UIImagePicker
@@ -140,12 +138,21 @@ private extension NewEventViewController {
         }
     }
     
-    
     func prettyUI() {
         
         addButton.layer.cornerRadius = 4
         cancelButton.layer.cornerRadius = 4
+    }
+    
+    func textFieldSetUp () {
         
+        eventTitleTextField.delegate = self
+        eventDescriptionTextField.delegate = self
+        eventAddressTextField.delegate = self
+        
+        eventTitleTextField.autocorrectionType = .no
+        eventDescriptionTextField.autocorrectionType = .no
+        eventAddressTextField.autocorrectionType = .no
     }
     
 }

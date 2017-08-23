@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-    
+        textFieldSetUp()
         
         getPic()
         
@@ -59,11 +59,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.title = "Profile"
         
-        nameTextField.delegate = self
-        occupationTextField.delegate = self
-        emailTextField.delegate = self
-        phoneTextField.delegate = self
-
         
         niceUI()
         
@@ -193,47 +188,72 @@ private extension ProfileViewController {
     func  niceUI() {
         
         profilePicImageView.layer.borderWidth = 2
+        profilePicImageView.layer.cornerRadius = 4
         profilePicImageView.layer.borderColor = UIColor.lightGray.cgColor
         profilePicImageView.clipsToBounds = true
         
         profileNumberLabel.layer.borderWidth = 2
+        profileNumberLabel.layer.cornerRadius = 4
         profileNumberLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileNumberLabel.clipsToBounds = true
         
         profileNameLabel.layer.borderWidth = 2
+        profileNameLabel.layer.cornerRadius = 4
         profileNameLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileNameLabel.clipsToBounds = true
         
         
         profileOccupationLabel.layer.borderWidth = 2
+        profileOccupationLabel.layer.cornerRadius = 4
         profileOccupationLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileOccupationLabel.clipsToBounds = true
         
         profileEmailLabel.layer.borderWidth = 2
+        profileEmailLabel.layer.cornerRadius = 4
         profileEmailLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileEmailLabel.clipsToBounds = true
         
               
-        editingImageView.layer.cornerRadius = 16
+        editingImageView.layer.cornerRadius = 4
         editingImageView.layer.borderColor = UIColor.orange.cgColor
         editingImageView.layer.borderWidth = 5
         editingImageView.clipsToBounds = true
         
         nameTextField.layer.borderWidth = 5
+        nameTextField.layer.cornerRadius = 4
         nameTextField.layer.borderColor = UIColor.orange.cgColor
         
         occupationTextField.layer.borderWidth = 5
+        occupationTextField.layer.cornerRadius = 4
         occupationTextField.layer.borderColor = UIColor.orange.cgColor
 
         
         emailTextField.layer.borderWidth = 5
+        emailTextField.layer.cornerRadius = 4
         emailTextField.layer.borderColor = UIColor.orange.cgColor
 
         phoneTextField.layer.borderWidth = 5
+        phoneTextField.layer.cornerRadius = 4
         phoneTextField.layer.borderColor = UIColor.orange.cgColor
         
         displayStack.layer.borderColor = UIColor.lightGray.cgColor
         displayStack.layer.borderWidth = 2
+    }
+    
+    func textFieldSetUp() {
+        
+        nameTextField.delegate = self
+        occupationTextField.delegate = self
+        emailTextField.delegate = self
+        phoneTextField.delegate = self
+        
+        nameTextField.autocorrectionType = .no
+        occupationTextField.autocorrectionType = .no
+        emailTextField.autocorrectionType = .no
+        phoneTextField.autocorrectionType = .no
+        
+
+        
     }
 
     func getPic() {
@@ -254,7 +274,6 @@ private extension ProfileViewController {
             
             self.userProfile?.photo = UIImage(data: data)
             self.profilePicImageView.image = self.userProfile?.photo
-
         }
     }
 }

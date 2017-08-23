@@ -42,16 +42,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailTextField.delegate = self
-        nameTextField.delegate = self
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
-        repasswordTextField.delegate = self
-        phoneTextField.delegate = self
-        professionTextField.delegate = self
-
+        prettyUI()
         
-       prettyUI()
+        textFieldSetUp()
 
         // Do any additional setup after loading the view.
     }
@@ -182,16 +175,29 @@ private extension SignUpViewController {
     
     func prettyUI() {
         
-//        emailTextField.layer.cornerRadius = 16
-//        nameTextField.layer.cornerRadius = 16
-//        usernameTextField.layer.cornerRadius = 16
-//        passwordTextField.layer.cornerRadius = 16
-//        repasswordTextField.layer.cornerRadius = 16
         backButton.layer.cornerRadius = 4
         nextButton.layer.cornerRadius = 4
         signupButton.layer.cornerRadius = 4
         cancelButton.layer.cornerRadius = 4
     }
     
+    func textFieldSetUp() {
+        
+        emailTextField.delegate = self
+        nameTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        repasswordTextField.delegate = self
+        phoneTextField.delegate = self
+        professionTextField.delegate = self
+        
+        emailTextField.autocorrectionType = .no
+        nameTextField.autocorrectionType = .no
+        usernameTextField.autocorrectionType = .no
+        passwordTextField.autocorrectionType = .no
+        repasswordTextField.autocorrectionType = .no
+        phoneTextField.autocorrectionType = .no
+        professionTextField.autocorrectionType = .no
     
+    }
 }
