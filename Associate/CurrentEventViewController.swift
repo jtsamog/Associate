@@ -67,8 +67,13 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         self.messageTextField.delegate = self
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
+        
         self.retrieveMessages()
         
+        // figure out where to put this later
+        //let indexPath = IndexPath(row: self.messagesObjArray.count - 1, section: 0)
+        //self.messageTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+    
         //Refresh Control
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
@@ -204,6 +209,10 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
                 self.messageTableView.separatorStyle = .none
                 self.activityIndicator.stopAnimating()
                 self.refreshControl.endRefreshing()
+                
+                // figure out where to put this later
+                //let indexPath = IndexPath(row: self.messagesObjArray.count - 1, section: 0)
+                //self.messageTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
             }
             })
     }
