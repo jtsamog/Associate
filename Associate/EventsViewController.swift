@@ -183,7 +183,7 @@ private extension EventsViewController {
         
         for button in blueButtons {
             button.layer.backgroundColor = UIColor.white.cgColor
-            button.layer.borderColor = UIColor.orange.cgColor
+            button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
         }
