@@ -24,13 +24,14 @@ final class Event: PFObject {
     var photo: UIImage?
   
   // MARK: - Initializers
-  init(title: String?,
-       image: PFFile,
-       user: PFUser,
-       descrip: String?,
-       addressGeoLoc: PFGeoPoint?
-//    , eventMessage: String? = nil
-        ) {
+    init(title: String?,
+         image: PFFile,
+         user: PFUser,
+         descrip: String?,
+         addressGeoLoc: PFGeoPoint?,
+         address: String?
+        )
+    {
         super.init()
         
         self.title = title
@@ -38,8 +39,8 @@ final class Event: PFObject {
         self.image = image
         self.user = user
         self.addressGeoLoc = addressGeoLoc
-//        self.eventMessage = eventMessage
-  
+        self.address = address
+        
     }
   
     

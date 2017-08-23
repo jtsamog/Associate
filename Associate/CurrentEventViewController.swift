@@ -48,6 +48,13 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     let refreshControl = UIRefreshControl()
     
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm dd/MM yyyy"
+        return formatter
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,6 +267,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         debugPrint(message)
         let creator = message["creator"] as! PFUser
         cell.messageLabel?.text = message["msgText"] as? String
+        let creationDate = message.createdAt
+        let dateString = message.createdAt != nil ? self.dateFormatter.string(from: creationDate!) : "n/a"
+        cell.timeLabel?.text = dateString
         cell.postNameLabel?.text = creator["fullname"] as? String
         if let imageFile = creator["profileImage"] as? PFFile {
             imageFile.getDataInBackground { data, error in

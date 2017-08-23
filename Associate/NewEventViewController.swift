@@ -121,7 +121,7 @@ private extension NewEventViewController {
       }
       
       
-      let newEvent = Event(title: eventTitleTextField.text, image: file, user: currentUser, descrip: eventDescriptionTextField.text, addressGeoLoc: loc)
+        let newEvent = Event(title: eventTitleTextField.text, image: file, user: currentUser, descrip: eventDescriptionTextField.text, addressGeoLoc: loc, address: eventAddressTextField.text)
       
         newEvent.saveInBackground { [unowned self] succeeded, error in
             
