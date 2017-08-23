@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        MAThemeKit.customizeNavigationBarColor(UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0), textColor: UIColor.white, buttonColor: UIColor.white)
+       // MAThemeKit.customizeNavigationBarColor(UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0), textColor: UIColor.white, buttonColor: UIColor.white)
+        
+        MAThemeKit.customizeNavigationBarColor(UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0), textColor: UIColor.white, fontName: "Futura", fontSize: 15, buttonColor: UIColor.white)
         
 
         IQKeyboardManager.sharedManager().enable = true

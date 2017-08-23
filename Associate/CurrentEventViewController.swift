@@ -72,6 +72,9 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
         self.messageTableView.dataSource = self
         self.messageTableView.delegate = self
         self.messageTextField.delegate = self
+        
+        messageTextField.autocorrectionType = .no
+        
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         self.messageTableView.addGestureRecognizer(tapGesture)
         
@@ -246,7 +249,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.21, animations: {
-            self.dockViewHeightConstaint.constant = 335
+            self.dockViewHeightConstaint.constant = 240
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -296,7 +299,7 @@ class CurrentEventViewController: UIViewController, UITableViewDataSource, UITab
 //MARK: UICode
 private extension CurrentEventViewController {
     func prettyUI() {
-        leaveEventButton.layer.backgroundColor = UIColor.red.cgColor
+        leaveEventButton.layer.backgroundColor = UIColor.white.cgColor
         leaveEventButton.layer.borderColor = UIColor.white.cgColor
         leaveEventButton.layer.borderWidth = 3
         leaveEventButton.layer.cornerRadius = 10
@@ -305,7 +308,7 @@ private extension CurrentEventViewController {
         sendButton.layer.cornerRadius = 4 
         
         for button in blueButtons {
-            button.layer.backgroundColor = UIColor.blue.cgColor
+            button.layer.backgroundColor = UIColor.white.cgColor
             button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 3
             button.layer.cornerRadius = 10
