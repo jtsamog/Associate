@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301AEE651F4E12D800D736C9 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AEE641F4E12D800D736C9 /* APIKeys.swift */; };
 		302411C11F4766A70085E08A /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302411C01F4766A70085E08A /* EventMessage.swift */; };
 		3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045ADE01F43A7CC00E734AC /* EventUser.swift */; };
 		30C3C3721F4202DB008FAE9A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C3711F4202DB008FAE9A /* R.swift */; };
@@ -31,10 +32,10 @@
 		FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */; };
 		FFEEFDAA1F3E1F12002E0C9A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */; };
 		FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */; };
-		FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFAF7E21F436C2D00C75272 /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301AEE641F4E12D800D736C9 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		302411C01F4766A70085E08A /* EventMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
 		3045ADE01F43A7CC00E734AC /* EventUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUser.swift; sourceTree = "<group>"; };
 		30C3C3711F4202DB008FAE9A /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
 		FFEEFDA91F3E1F12002E0C9A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		FFEEFDAB1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
-		FFFAF7E21F436C2D00C75272 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 				3045ADE01F43A7CC00E734AC /* EventUser.swift */,
 				302411C01F4766A70085E08A /* EventMessage.swift */,
 				30C3C3711F4202DB008FAE9A /* R.swift */,
-				FFFAF7E21F436C2D00C75272 /* APIKeys.swift */,
+				301AEE641F4E12D800D736C9 /* APIKeys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 				TargetAttributes = {
 					FF887C381F3B6E6E0095F5C9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 76WZ7VC9P2;
+						DevelopmentTeam = 4KJC5XPKL6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -347,9 +347,9 @@
 				FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */,
 				FFEEFD681F3CEDD4002E0C9A /* SignUpViewController.swift in Sources */,
 				FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */,
+				301AEE651F4E12D800D736C9 /* APIKeys.swift in Sources */,
 				3045ADE11F43A7CC00E734AC /* EventUser.swift in Sources */,
 				FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */,
-				FFFAF7E31F436C2D00C75272 /* APIKeys.swift in Sources */,
 				30C3C3781F42049E008FAE9A /* Event.swift in Sources */,
 				FF3879051F421C57002685B8 /* NewEventViewController.swift in Sources */,
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
@@ -484,7 +484,7 @@
 			baseConfigurationReference = 4E4E63013482F53E37A8A3B7 /* Pods-Associate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 76WZ7VC9P2;
+				DEVELOPMENT_TEAM = 4KJC5XPKL6;
 				INFOPLIST_FILE = Associate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,7 +499,7 @@
 			baseConfigurationReference = A1A5FF9B3C9341185AB52CA9 /* Pods-Associate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 76WZ7VC9P2;
+				DEVELOPMENT_TEAM = 4KJC5XPKL6;
 				INFOPLIST_FILE = Associate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
