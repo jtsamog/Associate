@@ -20,9 +20,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileEmailLabel: UILabel!
     @IBOutlet weak var profileNumberLabel: UILabel!
     
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    
     //Editing
     @IBOutlet weak var editingStack: UIStackView!
     @IBOutlet weak var editingImageView: UIImageView!
@@ -94,6 +91,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         
             print("Editing")
+            
             editSaveButton.title = "Save"
             
             self.title = "Edit Mode"
@@ -101,14 +99,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             editingStack.isHidden = false
             editingImageView.isHidden = false
             
-            editButton.isHidden = true
             displayStack.isHidden = true
             profilePicImageView.isHidden = true
             
             editingImageView.image = userProfile?.photo
             nameTextField.text = userProfile?.fullname
             occupationTextField.text = userProfile?.profession
-            emailTextField.text = userProfile?.emailAddr
+   //         emailTextField.text = userProfile?.emailAddr
             phoneTextField.text = userProfile?.phone
         
             
@@ -122,7 +119,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             
             //Hiding Views
-            editButton.isHidden = false
             displayStack.isHidden = false
             profilePicImageView.isHidden = false
             
@@ -196,19 +192,25 @@ private extension ProfileViewController {
     
     func  niceUI() {
         
-        profilePicImageView.layer.cornerRadius = 16
+        profilePicImageView.layer.borderWidth = 2
+        profilePicImageView.layer.borderColor = UIColor.lightGray.cgColor
         profilePicImageView.clipsToBounds = true
         
-        profileNumberLabel.layer.cornerRadius = 16
+        profileNumberLabel.layer.borderWidth = 2
+        profileNumberLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileNumberLabel.clipsToBounds = true
         
-        profileNameLabel.layer.cornerRadius = 16
+        profileNameLabel.layer.borderWidth = 2
+        profileNameLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileNameLabel.clipsToBounds = true
         
-        profileOccupationLabel.layer.cornerRadius = 16
+        
+        profileOccupationLabel.layer.borderWidth = 2
+        profileOccupationLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileOccupationLabel.clipsToBounds = true
         
-        profileEmailLabel.layer.cornerRadius = 16
+        profileEmailLabel.layer.borderWidth = 2
+        profileEmailLabel.layer.borderColor = UIColor.lightGray.cgColor
         profileEmailLabel.clipsToBounds = true
         
               
@@ -229,6 +231,9 @@ private extension ProfileViewController {
 
         phoneTextField.layer.borderWidth = 5
         phoneTextField.layer.borderColor = UIColor.orange.cgColor
+        
+        displayStack.layer.borderColor = UIColor.lightGray.cgColor
+        displayStack.layer.borderWidth = 2
     }
 
     func getPic() {

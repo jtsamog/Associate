@@ -33,6 +33,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
+        usernameTextField.autocorrectionType = .no
+        passwordTextField.autocorrectionType = .no
 //        prettyUI()
         
         warningAlert.addAction(okAlert)

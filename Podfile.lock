@@ -1,18 +1,21 @@
 PODS:
   - Bolts/Tasks (1.8.4)
+  - IQKeyboardManagerSwift (4.0.10)
   - MAThemeKit (1.0)
   - Parse (1.15.1):
     - Bolts/Tasks (~> 1.8)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift (= 4.0.10)
   - MAThemeKit (~> 1.0)
   - Parse
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   MAThemeKit: 559acc98ceadc051cccb1b6bb0c4ca28475eb021
   Parse: b7a77b20b8a6dede8058da1e2b339593578ce158
 
-PODFILE CHECKSUM: df88db12d6a0b8ddc8e5d3d9d55e4e2993b2715c
+PODFILE CHECKSUM: f22b14d8439beb0d0c3fb8cb94d075da9f5f5ff9
 
 COCOAPODS: 1.3.1
