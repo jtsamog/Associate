@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         usernameTextField.autocorrectionType = .no
         passwordTextField.autocorrectionType = .no
-//        prettyUI()
+        prettyUI()
         
         warningAlert.addAction(okAlert)
         
@@ -93,18 +93,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 //MARK: UI
 
-//private extension LoginViewController {
-//    
-//    func prettyUI() {
-//        
-//        
-//        for b in buttons {
-//            
-//            b.layer.cornerRadius = 16
-//            
-//        }
-//        
+private extension LoginViewController {
+    
+    func prettyUI() {
+        
+        
+        for b in buttons {
+            
+            b.layer.cornerRadius = 4
+            
+        }
+        
 //        usernameTextField.layer.cornerRadius = 16
 //        passwordTextField.layer.cornerRadius = 16
-//    }
-//}
+    }
+}
