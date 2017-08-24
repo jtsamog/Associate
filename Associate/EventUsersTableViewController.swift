@@ -11,45 +11,47 @@ import Parse
 
 class EventUsersTableViewController: UITableViewController {
     
-    //MARK: Cell and Id 
-    // EventUsersTVC uses userCell, id - user
-
-    
-    
-    
     //MARK: Properties
     var usersInEventArray = [PFUser]()
+    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Users In Event"
 
-        
+        //Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
     }
-
-  
-    // MARK: - Table view data source
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (usersInEventArray.isEmpty) {
+            activityIndicator.startAnimating()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func refreshPull() {
+        activityIndicator.startAnimating()
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+    
+    // MARK: Datasource/Delegate
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return usersInEventArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "user", for: indexPath) as! UserTableViewCell
-        
         cellUI(cell: cell)
-
         let user = usersInEventArray[indexPath.row]
         
         cell.userNameLabel.text = user["fullname"] as? String
@@ -67,11 +69,9 @@ class EventUsersTableViewController: UITableViewController {
                     print(#line, "No Photo to retrieve")
                     return
                 }
-                
                 cell.userPicImageView.image = UIImage(data: data)
             }
         }
-        
         cell.connectImageView.image = UIImage(named: "Unchecked2")
         
         return cell
@@ -95,12 +95,10 @@ class EventUsersTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! UserTableViewCell
         cell.connectImageView.image = UIImage(named: "Checked2")
     }
-    
 }
 
 
-//MARK: Extensions 
-
+//MARK: Extensions
 private extension EventUsersTableViewController {
     
     func cellUI(cell: UserTableViewCell) {

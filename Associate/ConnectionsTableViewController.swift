@@ -12,9 +12,28 @@ import Parse
 class ConnectionsTableViewController: UITableViewController {
     
     var connectionsArray:[PFUser] = [PFUser]()
+    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(refreshPull), for: UIControlEvents.valueChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (connectionsArray.isEmpty) {
+            activityIndicator.startAnimating()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func refreshPull() {
+        activityIndicator.startAnimating()
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     //MARK: Datasource/Delegate
