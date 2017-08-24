@@ -146,6 +146,10 @@ private extension NewEventViewController {
     
     func textFieldSetUp () {
         
+        eventImageView.layer.borderColor = UIColor.gray.cgColor
+        eventImageView.layer.borderWidth = 2
+        eventImageView.clipsToBounds = true 
+        
         eventTitleTextField.delegate = self
         eventDescriptionTextField.delegate = self
         eventAddressTextField.delegate = self

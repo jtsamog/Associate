@@ -197,8 +197,8 @@ private extension EventsViewController {
         cell.eventImageView.layer.cornerRadius = 50
         cell.eventImageView.clipsToBounds = true
         cell.eventNameLabel.layer.cornerRadius = 4
-        cell.eventNameLabel.layer.borderColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0).cgColor
-        cell.eventNameLabel.layer.borderWidth = 2
+       // cell.eventNameLabel.layer.borderColor = UIColor.init(colorLiteralRed: 59/255, green: 155/255, blue: 236/255, alpha: 1.0).cgColor
+       // cell.eventNameLabel.layer.borderWidth = 2
     }
     
     

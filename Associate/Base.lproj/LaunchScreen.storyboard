@@ -22,17 +22,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="TgY-xN-rqz">
-                                <rect key="frame" x="97" y="115" width="180" height="180"/>
+                                <rect key="frame" x="87" y="233.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="Iza-tU-Hbo"/>
-                                    <constraint firstAttribute="width" constant="180" id="Rxq-HR-Tvd"/>
+                                    <constraint firstAttribute="height" constant="200" id="Iza-tU-Hbo"/>
+                                    <constraint firstAttribute="width" constant="200" id="Rxq-HR-Tvd"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.60784313725490191" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TgY-xN-rqz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5cx-g9-S9O"/>
-                            <constraint firstItem="TgY-xN-rqz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="95" id="7jp-cw-jn4"/>
+                            <constraint firstItem="TgY-xN-rqz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wlk-iM-Z4r"/>
                         </constraints>
                     </view>
                 </viewController>

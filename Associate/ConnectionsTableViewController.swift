@@ -17,6 +17,7 @@ class ConnectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Connections"
 
         //Refresh Control
         refreshControl = UIRefreshControl()

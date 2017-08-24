@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okz-da-uPD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okz-da-uPD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASSOCIATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQy-Cs-3ZF">
@@ -337,26 +337,44 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-54-i85">
-                                                    <rect key="frame" x="132" y="89" width="170" height="80"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Details" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-54-i85">
+                                                    <rect key="frame" x="122" y="89" width="195" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="170" id="mjP-MP-r8X"/>
+                                                        <constraint firstAttribute="width" constant="195" id="mjP-MP-r8X"/>
                                                         <constraint firstAttribute="height" constant="80" id="zhe-TV-s4I"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 6" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-Pc-0B2">
+                                                    <rect key="frame" x="119" y="76" width="198" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="cos-bV-vfR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 6" translatesAutoresizingMaskIntoConstraints="NO" id="DRM-MW-EYa">
+                                                    <rect key="frame" x="119" y="39" width="198" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="Ojk-Gv-MI2"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tGG-pi-ktf" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="15" id="25h-XW-bj7"/>
-                                                <constraint firstItem="gJB-54-i85" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="BUP-pv-7uB"/>
+                                                <constraint firstItem="UO7-Pc-0B2" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="7" id="5Nr-VQ-Ctn"/>
+                                                <constraint firstAttribute="trailing" secondItem="UO7-Pc-0B2" secondAttribute="trailing" constant="3" id="7UX-dC-bed"/>
+                                                <constraint firstItem="gJB-54-i85" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="10" id="BUP-pv-7uB"/>
                                                 <constraint firstItem="gJB-54-i85" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="15" id="Bet-vd-lC0"/>
+                                                <constraint firstItem="DRM-MW-EYa" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="2.5" id="DA3-aw-JWc"/>
                                                 <constraint firstItem="PQd-pw-WBD" firstAttribute="top" secondItem="E8G-1c-KqI" secondAttribute="top" constant="14" id="LYV-kG-yuM"/>
                                                 <constraint firstItem="f8r-6V-lUO" firstAttribute="leading" secondItem="E8G-1c-KqI" secondAttribute="leading" constant="12" id="MNx-9O-MMa"/>
                                                 <constraint firstItem="PQd-pw-WBD" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="NFo-Qm-oBA"/>
                                                 <constraint firstItem="f8r-6V-lUO" firstAttribute="centerY" secondItem="E8G-1c-KqI" secondAttribute="centerY" multiplier="0.75" id="TYl-cj-Epw"/>
+                                                <constraint firstAttribute="trailing" secondItem="DRM-MW-EYa" secondAttribute="trailing" constant="3" id="XLF-vQ-djW"/>
                                                 <constraint firstItem="tGG-pi-ktf" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="bMs-oG-6OK"/>
+                                                <constraint firstItem="UO7-Pc-0B2" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="2" id="d3t-1V-yqC"/>
+                                                <constraint firstItem="DRM-MW-EYa" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="7" id="tIx-as-gUp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -719,7 +737,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <state key="normal" title="Leave Event">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="leaveEventTapped:" destination="MvU-aL-ZAI" eventType="touchUpInside" id="9Jc-BU-eDA"/>
@@ -1549,6 +1567,7 @@
         <image name="Arrrow" width="16" height="24"/>
         <image name="BackB" width="16" height="24"/>
         <image name="Event Header 2" width="327" height="23"/>
+        <image name="Line 6" width="277" height="1"/>
         <image name="Logo" width="272" height="302"/>
         <image name="Table" width="32" height="26"/>
         <image name="Unchecked2" width="40" height="40"/>
@@ -1556,9 +1575,9 @@
         <image name="noPhotoSelected" width="617" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QsS-9f-Urf"/>
+        <segue reference="JA5-q0-fpF"/>
         <segue reference="QqL-lM-2kF"/>
-        <segue reference="cCY-BN-Cvr"/>
-        <segue reference="huF-Vq-d3s"/>
+        <segue reference="Jtw-DX-t9u"/>
+        <segue reference="jN9-aB-hQI"/>
     </inferredMetricsTieBreakers>
 </document>

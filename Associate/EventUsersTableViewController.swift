@@ -73,7 +73,6 @@ class EventUsersTableViewController: UITableViewController {
             }
         }
         cell.connectImageView.image = UIImage(named: "Unchecked2")
-        
         return cell
     }
     
@@ -107,12 +106,7 @@ private extension EventUsersTableViewController {
         cell.userPicImageView.layer.cornerRadius = 32
         cell.userPicImageView.layer.borderWidth = 1
         cell.userPicImageView.layer.borderColor = UIColor.black.cgColor
-        
-        
-        
     }
-    
-    
 }
 
 
