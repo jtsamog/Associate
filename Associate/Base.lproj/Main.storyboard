@@ -61,7 +61,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5g-lO-LUM">
                                         <rect key="frame" x="40" y="380" width="240" height="40"/>
@@ -312,7 +312,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8r-6V-lUO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8r-6V-lUO">
                                                     <rect key="frame" x="12" y="15.5" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="4Yz-CD-QMO"/>
@@ -589,12 +589,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-NY-n7z">
-                                                            <rect key="frame" x="60" y="36" width="220" height="22.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-NY-n7z">
+                                                            <rect key="frame" x="60" y="36" width="220" height="19.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="220" id="2Td-rr-pKi"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -892,12 +892,12 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-ny-PBi">
-                                            <rect key="frame" x="89" y="8" width="130" height="25"/>
+                                            <rect key="frame" x="89" y="8" width="180" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="WSO-jp-4jh"/>
-                                                <constraint firstAttribute="width" constant="130" id="jDr-qD-izL"/>
+                                                <constraint firstAttribute="width" constant="180" id="jDr-qD-izL"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -907,7 +907,7 @@
                                                 <constraint firstAttribute="width" constant="180" id="Spf-2K-LlU"/>
                                                 <constraint firstAttribute="height" constant="25" id="hIH-w6-p8w"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -972,20 +972,20 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-Vq-Soo">
-                                            <rect key="frame" x="98" y="10" width="120" height="22.5"/>
+                                            <rect key="frame" x="98" y="10" width="180" height="19.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="4xH-44-KEd"/>
+                                                <constraint firstAttribute="width" constant="180" id="4xH-44-KEd"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio/Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrh-2y-JUl">
-                                            <rect key="frame" x="98" y="42.5" width="180" height="22.5"/>
+                                            <rect key="frame" x="98" y="39.5" width="180" height="19.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="KRh-L8-R9b"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1575,9 +1575,9 @@
         <image name="noPhotoSelected" width="617" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JA5-q0-fpF"/>
         <segue reference="QqL-lM-2kF"/>
-        <segue reference="Jtw-DX-t9u"/>
+        <segue reference="JA5-q0-fpF"/>
         <segue reference="jN9-aB-hQI"/>
+        <segue reference="Jtw-DX-t9u"/>
     </inferredMetricsTieBreakers>
 </document>

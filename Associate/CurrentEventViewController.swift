@@ -305,6 +305,10 @@ private extension CurrentEventViewController {
         leaveEventButton.layer.cornerRadius = 10
         
         joinButtn.layer.cornerRadius = 4
+        
+        joinImageView.layer.cornerRadius = 25
+        joinImageView.clipsToBounds = true
+        
         sendButton.layer.cornerRadius = 4 
         
         for button in blueButtons {
