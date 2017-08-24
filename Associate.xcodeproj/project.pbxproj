@@ -26,7 +26,6 @@
 		FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */; };
 		FFEEFD981F3E1DF0002E0C9A /* EventUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */; };
 		FFEEFD9A1F3E1E13002E0C9A /* ConnectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD991F3E1E13002E0C9A /* ConnectionsTableViewController.swift */; };
-		FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */; };
 		FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */; };
 		FFEEFDA61F3E1F00002E0C9A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA51F3E1F00002E0C9A /* EventTableViewCell.swift */; };
 		FFEEFDA81F3E1F08002E0C9A /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */; };
@@ -58,7 +57,6 @@
 		FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		FFEEFD971F3E1DF0002E0C9A /* EventUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewController.swift; sourceTree = "<group>"; };
 		FFEEFD991F3E1E13002E0C9A /* ConnectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsTableViewController.swift; sourceTree = "<group>"; };
-		FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FFEEFDA51F3E1F00002E0C9A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		FFEEFDA71F3E1F08002E0C9A /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				FFEEFD691F3CEE78002E0C9A /* LoginViewController.swift */,
 				FFEEFD671F3CEDD4002E0C9A /* SignUpViewController.swift */,
 				FFEEFD931F3E17E5002E0C9A /* EventsViewController.swift */,
-				FFEEFD9B1F3E1E2A002E0C9A /* UserDetailViewController.swift */,
 				FFEEFD9D1F3E1E33002E0C9A /* ProfileViewController.swift */,
 				FF3879041F421C57002685B8 /* NewEventViewController.swift */,
 				FF693CD61F437DDD00255461 /* CurrentEventViewController.swift */,
@@ -355,7 +352,6 @@
 				FFEEFD9E1F3E1E33002E0C9A /* ProfileViewController.swift in Sources */,
 				FFEEFDAC1F3E1F1E002E0C9A /* ConnectionTableViewCell.swift in Sources */,
 				30C3C3721F4202DB008FAE9A /* R.swift in Sources */,
-				FFEEFD9C1F3E1E2A002E0C9A /* UserDetailViewController.swift in Sources */,
 				FF887C3D1F3B6E6E0095F5C9 /* AppDelegate.swift in Sources */,
 				FF3C30931F4CBB960071C8C9 /* DetailUserViewController.swift in Sources */,
 				FFEEFD941F3E17E5002E0C9A /* EventsViewController.swift in Sources */,

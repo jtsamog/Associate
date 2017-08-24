@@ -100,7 +100,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             editingImageView.image = userProfile?.photo
             nameTextField.text = userProfile?.fullname
             occupationTextField.text = userProfile?.profession
-   //         emailTextField.text = userProfile?.emailAddr
+            emailTextField.text = userProfile?.emailAddr
             phoneTextField.text = userProfile?.phone
         
             

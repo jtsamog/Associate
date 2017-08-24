@@ -15,6 +15,8 @@ class ConnectionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Connections"
     }
 
     //MARK: Datasource/Delegate
@@ -52,6 +54,19 @@ class ConnectionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedConnection = connectionsArray[ (indexPath as NSIndexPath).row ]
         self.performSegue(withIdentifier: "showDetail", sender: selectedConnection)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let selected = sender as? PFUser {
+            
+            let detailVC:DetailUserViewController = (segue.destination as? DetailUserViewController)!
+            
+            detailVC.selectedConnection = selected
+        }
+        
     }
 }
 
