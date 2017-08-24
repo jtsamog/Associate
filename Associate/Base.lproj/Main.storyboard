@@ -348,15 +348,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 6" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-Pc-0B2">
-                                                    <rect key="frame" x="119" y="76" width="198" height="10"/>
+                                                    <rect key="frame" x="119" y="79" width="198" height="5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="cos-bV-vfR"/>
+                                                        <constraint firstAttribute="height" constant="5" id="cos-bV-vfR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 6" translatesAutoresizingMaskIntoConstraints="NO" id="DRM-MW-EYa">
-                                                    <rect key="frame" x="119" y="39" width="198" height="10"/>
+                                                    <rect key="frame" x="119" y="41.5" width="198" height="5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="Ojk-Gv-MI2"/>
+                                                        <constraint firstAttribute="height" constant="5" id="Ojk-Gv-MI2"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -364,17 +364,19 @@
                                                 <constraint firstItem="tGG-pi-ktf" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="15" id="25h-XW-bj7"/>
                                                 <constraint firstItem="UO7-Pc-0B2" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="7" id="5Nr-VQ-Ctn"/>
                                                 <constraint firstAttribute="trailing" secondItem="UO7-Pc-0B2" secondAttribute="trailing" constant="3" id="7UX-dC-bed"/>
+                                                <constraint firstItem="UO7-Pc-0B2" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="5" id="8gU-hs-piZ"/>
                                                 <constraint firstItem="gJB-54-i85" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="10" id="BUP-pv-7uB"/>
                                                 <constraint firstItem="gJB-54-i85" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="15" id="Bet-vd-lC0"/>
-                                                <constraint firstItem="DRM-MW-EYa" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="2.5" id="DA3-aw-JWc"/>
                                                 <constraint firstItem="PQd-pw-WBD" firstAttribute="top" secondItem="E8G-1c-KqI" secondAttribute="top" constant="14" id="LYV-kG-yuM"/>
                                                 <constraint firstItem="f8r-6V-lUO" firstAttribute="leading" secondItem="E8G-1c-KqI" secondAttribute="leading" constant="12" id="MNx-9O-MMa"/>
                                                 <constraint firstItem="PQd-pw-WBD" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="NFo-Qm-oBA"/>
                                                 <constraint firstItem="f8r-6V-lUO" firstAttribute="centerY" secondItem="E8G-1c-KqI" secondAttribute="centerY" multiplier="0.75" id="TYl-cj-Epw"/>
                                                 <constraint firstAttribute="trailing" secondItem="DRM-MW-EYa" secondAttribute="trailing" constant="3" id="XLF-vQ-djW"/>
                                                 <constraint firstItem="tGG-pi-ktf" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="20" id="bMs-oG-6OK"/>
-                                                <constraint firstItem="UO7-Pc-0B2" firstAttribute="top" secondItem="tGG-pi-ktf" secondAttribute="bottom" constant="2" id="d3t-1V-yqC"/>
+                                                <constraint firstItem="tGG-pi-ktf" firstAttribute="top" secondItem="DRM-MW-EYa" secondAttribute="bottom" constant="5" id="ehR-Fo-YNW"/>
+                                                <constraint firstItem="DRM-MW-EYa" firstAttribute="top" secondItem="PQd-pw-WBD" secondAttribute="bottom" constant="5" id="lcV-tW-86C"/>
                                                 <constraint firstItem="DRM-MW-EYa" firstAttribute="leading" secondItem="f8r-6V-lUO" secondAttribute="trailing" constant="7" id="tIx-as-gUp"/>
+                                                <constraint firstItem="gJB-54-i85" firstAttribute="top" secondItem="UO7-Pc-0B2" secondAttribute="bottom" constant="5" id="udF-vv-YqV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1576,8 +1578,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QqL-lM-2kF"/>
-        <segue reference="JA5-q0-fpF"/>
-        <segue reference="jN9-aB-hQI"/>
-        <segue reference="Jtw-DX-t9u"/>
+        <segue reference="cCY-BN-Cvr"/>
+        <segue reference="QsS-9f-Urf"/>
+        <segue reference="huF-Vq-d3s"/>
     </inferredMetricsTieBreakers>
 </document>
